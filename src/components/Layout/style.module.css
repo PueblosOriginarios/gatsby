@@ -1,0 +1,31 @@
+.Layout {
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+}
+
+.main {
+    margin-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+    .main {
+        margin-bottom: 0;
+    }
+}
+
+
+@media (min-width: 820px) {
+    .main {
+        margin-bottom: 3rem;
+    }
+}
+
+@media (min-width: 990px) {
+    .main {
+        margin-bottom: 0;
+    }
+}
