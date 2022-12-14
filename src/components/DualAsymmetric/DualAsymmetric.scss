@@ -1,0 +1,164 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.DualAsymmetric {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.DualAsymmetric .ImageContainer {
+  padding: 3rem 4rem;
+  img {
+    max-width: 192px !important;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.DualAsymmetric .TextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
+}
+
+.DualAsymmetric .Title {
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+.DualAsymmetric .Button {
+  margin: 1rem 0;
+  &.default {
+    @include primaryBtn;
+  }
+  &.alternative {
+    @include secondaryBtn;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .DualAsymmetric {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 250px) var(--right-column-width, 510px)
+      1fr;
+    &.right {
+      grid-template-columns:
+        1fr var(--left-column-width, 510px) var(--right-column-width, 250px)
+        1fr;
+    }
+    max-height: 100vh;
+  }
+  .DualAsymmetric .ImageContainer {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    &.right {
+      order: 1;
+    }
+  }
+  .DualAsymmetric .TextContainer {
+    padding: 3rem 0 3rem 2.5rem;
+    p,
+    h4 {
+      width: 90%;
+    }
+    &.right {
+      order: 0;
+    }
+  }
+  .emptyRight {
+    &.right {
+      order: 5;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .DualAsymmetric {
+    grid-template-columns:
+    1fr var(--left-column-width, 320px) var(--right-column-width, 640px)
+    1fr;
+    &.right {
+      grid-template-columns:
+        1fr var(--left-column-width, 640px) var(--right-column-width, 320px)
+        1fr;
+    }
+    .ImageContainer {
+      padding: 0 0 0 2.5rem;
+    }
+    .TextContainer {
+      padding: 5rem 0 5rem 2.5rem;
+    }
+  }
+
+}
+
+@media (min-width: $breakpoint-xl) {
+  .DualAsymmetric {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 370px) var(--right-column-width, 740px)
+      1fr;
+      &.right {
+        grid-template-columns:
+          1fr var(--left-column-width, 740px) var(--right-column-width, 370px)
+          1fr;
+      }
+      .ImageContainer {
+        img {
+          max-width: 320px !important;
+        }
+      }
+  }
+  .DualAsymmetric .TextContainer {
+    p,
+    h4 {
+      width: 90%;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xxl) {
+  .DualAsymmetric {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 420px) var(--right-column-width, 840px)
+      1fr;
+      &.right {
+        grid-template-columns:
+          1fr var(--left-column-width, 840px) var(--right-column-width, 420px)
+          1fr;
+      }
+  }
+}
+
+@media (min-width: $breakpoint-xxxl) {
+  .DualAsymmetric {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 470px) var(--right-column-width, 940px)
+      1fr;
+      &.right {
+        grid-template-columns:
+          1fr var(--left-column-width, 940px) var(--right-column-width, 470px)
+          1fr;
+      }
+  }
+}
+
+@media (min-width: $breakpoint-xxxxl) {
+  .DualAsymmetric {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 520px) var(--right-column-width, 1040px)
+      1fr;
+      &.right {
+        grid-template-columns:
+          1fr var(--left-column-width, 1040px) var(--right-column-width, 520px)
+          1fr;
+      }
+  }
+}

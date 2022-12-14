@@ -1,0 +1,57 @@
+.Section {
+    width: 100%;
+    height: auto;
+    background-color: var(--primary-color-white);
+    scroll-margin-top: 60px;
+}
+
+.Section .Heading {
+    margin: 0 0 2rem 0;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+}
+
+.ContentWrapper  {
+    width: 100%;
+    height: 100%;
+    max-width: var(--page-width);
+    margin: 5rem auto;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 768px){
+    .ContentWrapper  {
+        padding: 0 2.5rem;
+        max-width: 760px;
+    }
+}
+
+@media (min-width: 992px){
+    .ContentWrapper  {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px){
+    .ContentWrapper  {
+        max-width: 1110px;
+    }
+}
+
+@media (min-width: 1400px){
+    .ContentWrapper  {
+        max-width: 1260px;
+    }
+}
+
+@media (min-width: 1600px){
+    .ContentWrapper  {
+        max-width: 1410px;
+    }
+}
+
+@media (min-width: 1800px){
+    .ContentWrapper  {
+        max-width: 1560px;
+    }
+}

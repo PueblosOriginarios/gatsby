@@ -1,0 +1,76 @@
+@import "../../globalStyles/global.scss";
+
+.cardsVisitants {
+  .paginationVisitant{
+    background-image: url("../../../content/images/BackgroundGray.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .contentCardsText {
+    display: grid;
+    grid-template-columns: 1fr;
+    h6 {
+      background: $bg-white;
+      color: $dark-green;
+      padding: 1.5rem 1.5rem 3rem 1.5rem;
+      .borderB {
+        border-bottom: 2px solid $dark-green;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .cardsVisitants {
+    .contentCardsText{
+      h6{
+        padding: 3rem;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+@media (min-width: $breakpoint-lg) {
+  .cardsVisitants .contentCardsText {
+    grid-template-columns: 1fr var(--column-width, 960px) 1fr;
+    .empty-left {
+      background-color: $bg-white;
+    }
+    .empty-right {
+      background-color: $bg-white;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .cardsVisitants .contentCardsText {
+    grid-template-columns: 1fr var(--column-width, 1110px) 1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxl) {
+  .cardsVisitants .contentCardsText {
+    grid-template-columns: 1fr var(--column-width, 1260px) 1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxxl) {
+  .cardsVisitants .contentCardsText {
+    grid-template-columns: 1fr var(--column-width, 1410px) 1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxxxl) {
+  .cardsVisitants .contentCardsText {
+    grid-template-columns: 1fr var(--column-width, 1560px) 1fr;
+  }
+}
+
+@media (min-width: $breakpoint-max) {
+  .cardsVisitants .contentCardsText {
+    grid-template-columns: 1fr var(--column-width, 1710px) 1fr;
+  }
+}

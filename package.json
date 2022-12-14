@@ -1,0 +1,57 @@
+{
+  "name": "Bithouse Site",
+  "version": "1.0.0",
+  "description": "Bithouse site",
+  "scripts": {
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@fontsource/gothic-a1": "^4.5.9",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@portabletext/react": "^2.0.0",
+    "bootstrap": "^5.2.2",
+    "gatsby": "^4.18.2",
+    "gatsby-plugin-google-tagmanager": "^4.25.0",
+    "gatsby-plugin-image": "^2.24.0",
+    "gatsby-plugin-sanity-image": "^0.13.2",
+    "gatsby-plugin-sass": "^5.24.0",
+    "gatsby-source-sanity": "^7.5.1",
+    "gatsby-theme-portfolio-minimal": "latest",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.5.0",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-hubspot-form": "^1.3.7",
+    "react-multi-carousel": "^2.8.2",
+    "react-responsive": "^9.0.2",
+    "react-responsive-carousel": "^3.2.23",
+    "sass": "^1.56.0"
+  },
+  "keywords": [
+    "react",
+    "gatsby",
+    "gatsby-theme",
+    "PWA",
+    "portfolio",
+    "showcase",
+    "minimal",
+    "animations",
+    "dark-mode",
+    "gdpr-compliant"
+  ],
+  "devDependencies": {
+    "@types/react-helmet": "^6.1.5",
+    "prettier": "2.2.1",
+    "typescript": "^4.8.4",
+    "typescript-plugin-css-modules": "^3.4.0"
+  }
+}

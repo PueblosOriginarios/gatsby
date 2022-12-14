@@ -1,0 +1,20 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.carousel-root{
+  max-width: 500px;
+  margin: 0 auto;
+  .carousel {
+    .thumbs-wrapper {
+      display: none !important;
+    }
+    .control-dots{
+      background: #DFDFDF !important;
+      height: 50px ;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

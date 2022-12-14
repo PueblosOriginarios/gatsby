@@ -1,0 +1,59 @@
+@import "../../globalStyles/global.scss";
+
+.textContainer {
+  grid-template-columns: 1fr;
+  padding: 1.5rem;
+}
+
+@media (min-width: $breakpoint-md) {
+  .textContainer {
+    display: grid;
+    grid-template-columns:
+      1fr var(--middle-column-width, 760px)
+      1fr;
+
+    padding: 2rem 2.5rem;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .textContainer {
+    grid-template-columns:
+      1fr var(--middle-column-width, 960px)
+      1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .textContainer {
+    display: grid;
+    grid-template-columns:
+      1fr var(--middle-column-width, 1110px)
+      1fr;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: $breakpoint-xxl) {
+  .textContainer {
+    grid-template-columns:
+      1fr var(--middle-column-width, 1260px)
+      1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxxl) {
+  .textContainer {
+    grid-template-columns:
+      1fr var(--middle-column-width, 1410px)
+      1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxxxl) {
+  .textContainer {
+    grid-template-columns:
+      1fr var(--middle-column-width, 1560px)
+      1fr;
+  }
+}

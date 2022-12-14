@@ -1,0 +1,47 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.logos {
+  &__logos {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__image {
+    margin-top: 15px;
+    max-width: 220px;
+  }
+
+  .react-multiple-carousel__arrow {
+    min-height: 30px !important;
+    min-width: 30px !important;
+  }
+
+  .react-multi-carousel-list {
+    .custom-arrow {
+      background: $dark-green !important;
+      background: none;
+      color: $bg-white;
+      max-width: 20px;
+      max-height: 20px;
+      padding: 6px;
+      margin: 0 0.5rem;
+    }
+
+    .react-multi-carousel-item {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+}
+
+
+@media (min-width: $breakpoint-lg){
+  .logos{
+    padding-bottom: 3rem;
+
+  }
+}

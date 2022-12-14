@@ -1,0 +1,147 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.Vigentes {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 2.5rem;
+  .Button {
+    @include outlinedButton;
+  }
+  .Cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.Vigentes .VigentesText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  
+  img {
+    max-width: 270px;
+    padding-bottom: 1rem;
+  }
+  p {
+    padding: 1rem 0;
+  }
+}
+
+@media (min-width: $breakpoint-sm) {
+  .Vigentes .VigentesText {
+    img {
+      max-width: 400px;
+    }
+   
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      760px
+      1fr;
+  }
+  .Vigentes .CardsContainer {
+    .Cards {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+  .Vigentes .VigentesText{
+    padding-left: 2.5rem;
+    
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      var(--left-column-width, 430px)
+      var(--right-column-width, 430px)
+      1fr;
+  }
+
+  .Vigentes .VigentesText {
+    padding: 0 3rem 0 0;
+    align-items: flex-start;
+    img {
+      max-width: 350px;
+    }
+   
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      var(--left-column-width, 555px)
+      var(--right-column-width, 555px)
+      1fr;
+  }
+
+  .Vigentes .VigentesText {
+    padding-left: 2.5rem;
+    .ImageWrapper {
+      margin: 0 auto 1.5rem 0;
+    }
+    img {
+      max-width: 420px;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .Vigentes .CardsContainer {
+    margin: 95px 0;
+    .Cards {
+      max-height: 400px;
+      .Card {
+        min-height: 0px !important;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xxl) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      var(--left-column-width, 630px)
+      var(--right-column-width, 630px)
+      1fr;
+  }
+
+  .Vigentes .VigentesText {
+    padding-right: 4.5rem;
+  }
+}
+
+@media (min-width: $breakpoint-xxxl) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      var(--left-column-width, 705px)
+      var(--right-column-width, 705px)
+      1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxxxl) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      var(--left-column-width, 780px)
+      var(--right-column-width, 780px)
+      1fr;
+  }
+}
