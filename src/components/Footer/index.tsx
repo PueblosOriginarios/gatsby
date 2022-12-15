@@ -2,7 +2,6 @@ import React from "react"
 import Location from "./Location/Location"
 import Phone from "./Phone/Phone"
 import Email from "./Email/Email"
-import SocialMedia from "../SocialMedia/SocialMedia"
 import "./style.scss"
 
 export function Footer(): React.ReactElement {
@@ -16,9 +15,6 @@ export function Footer(): React.ReactElement {
             <Phone />
             <Location />
           </div>
-        </div>
-        <div className="Redes">
-          <SocialMedia logo/>
         </div>
       </div>
     </footer>

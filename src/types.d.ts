@@ -27,7 +27,6 @@ interface HeroContent {
     data?: any;
     titleHero?: string;
     _rawRichTextHero?: array;
-    socialNetworks?: boolean;
     imageHero?: any;
 }
 
