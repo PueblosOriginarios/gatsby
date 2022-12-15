@@ -8,7 +8,7 @@ const SocialMedia = ({ logo }) => {
   const mediaData = footer?.media
   const logoData = footer?.logo
 
-  const socialMedia = mediaData.map(media => {
+  const socialMedia = mediaData?.map(media => {
     return (
       <a
         href={media?.link}
@@ -22,7 +22,7 @@ const SocialMedia = ({ logo }) => {
   })
   return (
     <>
-      {logo ? (
+      {logo && logoData ? (
         <div className="Social">
           <SanityImage {...logoData} alt="Logo" className="Logo" />
 

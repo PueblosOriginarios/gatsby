@@ -18,6 +18,9 @@
     margin-right: 2rem;
     color: $bg-color;
   }
+  .Media {
+    max-width: 50px;
+  }
 }
 
 .Social .Logo {
@@ -34,7 +37,7 @@
   }
 }
 
-@media (max-width: $breakpoint-sm) {
+@media (min-width: $breakpoint-sm) {
   .Social {
     display: flex;
     flex-direction: column;
@@ -50,10 +53,25 @@
     margin-right: 0.5rem;
     margin-left: 1rem;
   }
-  .Social .Medias .Media {
-    max-width: 40px;
-  }
   .Social .Logo {
     max-width: 200px;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .Social .Medias .Media {
+    max-width: 60px;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .Social .Medias .Media {
+    max-width: 60px;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Social .Medias .Media {
+    max-width: 70px;
   }
 }
