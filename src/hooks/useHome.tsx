@@ -108,7 +108,6 @@ const useHome = () => {
               id
               _type
               titleHero
-              socialNetworks
               _rawRichTextHero
               imageHero {
                 crop {

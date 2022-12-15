@@ -6,7 +6,6 @@ const useHero = () => {
       allSanityHero {
         nodes {
           titleHero
-          socialNetworks
           _rawRichTextHero
           imageHero {
             crop {
