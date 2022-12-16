@@ -1,17 +1,17 @@
-import React from "react"
-import { DualSymmetric, TextBlock, Carousel, BannerDoble } from "../"
-import CardsVisitantes from "../CardsVisitantes/CardsVisitantes"
-import useArticle from "../../hooks/useArticle"
+import React from "react";
+import { DualSymmetric, TextBlock, Carousel, BannerDoble } from "../";
+import CardsVisitantes from "../CardsVisitantes/CardsVisitantes";
+import useArticle from "../../hooks/useArticle";
 
 const CustomSection = ({ sections }) => {
-  let checkImagePrint = false
-  const dataArticles = useArticle().allSanityArticle.nodes
+  let checkImagePrint = false;
+  const dataArticles = useArticle().allSanityArticle.nodes;
 
-  const sectionsImages = sections.filter(item => {
-    return item?._type === "imageComponent"
-  })
+  const sectionsImages = sections?.filter((item) => {
+    return item?._type === "imageComponent";
+  });
 
-  const sectionResult = sections.map((section, index) => {
+  const sectionResult = sections?.map((section, index) => {
     return (
       <>
         {section?._type !== null &&
@@ -34,7 +34,7 @@ const CustomSection = ({ sections }) => {
         section?._type !== undefined &&
         section?._type === "imageComponent" &&
         checkImagePrint === false ? (
-          <div className="my-3">
+          <div className='my-3'>
             <Carousel key={index} images={sectionsImages} />
             {(checkImagePrint = true)}
           </div>
@@ -54,10 +54,10 @@ const CustomSection = ({ sections }) => {
           <CardsVisitantes key={index} data={dataArticles} />
         ) : null}
       </>
-    )
-  })
+    );
+  });
 
-  return <>{sectionResult}</>
-}
+  return <>{sectionResult}</>;
+};
 
-export default CustomSection
+export default CustomSection;

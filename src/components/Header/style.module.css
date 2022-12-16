@@ -5,7 +5,6 @@
     width: 100%;
     height: auto;
     min-height: var(--header-height);
-
 }
 
 .ContentWrapper  {
@@ -71,17 +70,21 @@
     position: relative;
     font-size: 1rem;
     font-weight: 700;
-    text-align: center;
+    padding-left: 1rem;
+    text-align: left;
     color: var(--primary-color);
-    padding: 0;
-    margin-right: 4rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    margin-right: 2rem;
 }
 
-.TopNavigationBar a:last-child {
-    margin-right: 0;
+.TopNavigationBar a::after{
+    display: none !important;
 }
 
-.TopNavigationBar a.NavLink::before {
+.TopNavigationBar .dropdown-item {
+    padding-left: 1rem;
+}
+.TopNavigationBar .menu::before {
     content: '';
     position: absolute;
     height: 0.1563rem;
@@ -91,9 +94,15 @@
     transition: 200ms ease-out;
 }
 
-.TopNavigationBar a.NavLink:hover::before {
+.TopNavigationBar a:hover::before {
     width: 100%;
 }
+
+.TopNavigationBar a:focus { 
+    color: #4E7706; 
+    outline-style: hidden;
+    outline-width: 0;
+}  
 
 .TopNavigationBar a.CtaButton {
     color: white !important;
@@ -143,11 +152,31 @@
 .SideNavigationBar a {
     font-size: 1.5rem;
     font-weight: 700;
-    text-align: center;
     color: var(--primary-color);
-    padding: 1.5rem 0;
+    padding: 1.5rem 0.5rem;
+}
+.SideNavigationBar .menu a {
+    white-space: normal;
+    line-height: 35px;
+}
+.SideNavigationBar .submenuItem{
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    white-space: nowrap !important;
+}
+.SideNavigationBar .dropdown-toggle {
+    white-space: normal !important;
 }
 
+.SideNavigationBar a::after{
+    display: none !important;
+}
+
+.SideNavigationBar a:focus { 
+    color: #4E7706; 
+    outline-style: hidden;
+    outline-width: 0;
+}  
 .SideNavigationBar a.CtaButton {
     width: auto;
     height: auto;
@@ -159,6 +188,9 @@
     margin: 1.5rem auto;
 }
 
+.SideNavigationBar .a:focus, a:hover {
+    color:  #4E7706!important;
+}
 .SideBarBackdrop {
     position: fixed;
     z-index: 9;
