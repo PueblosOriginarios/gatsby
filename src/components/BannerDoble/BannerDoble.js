@@ -15,11 +15,11 @@ const BannerDoble = ({
     buttonType,
   },
 }) => {
-  const bgColorImage = colorLeft === null ? "#0A694D" : colorLeft?.value
-  const bgColorText = colorRight === null ? "#0A694D" : colorRight?.value
+  const bgColorImage = colorLeft === null ? "#4e7706" : colorLeft?.value
+  const bgColorText = colorRight === null ? "#4e7706" : colorRight?.value
   const altText = description === null ? "Banner Doble" : description
 
-  const darkColors = ["#0A694D", "#868585", "#1B1C1E"]
+  const darkColors = ["#4e7706", "#868585", "#1B1C1E"]
   const textColor = darkColors.includes(bgColorText) ? "light" : "dark"
   const buttonColor = darkColors.includes(bgColorText)
     ? "alternative"

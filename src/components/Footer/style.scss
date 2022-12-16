@@ -46,9 +46,7 @@
 .Footer .Title {
   color: var(--background-color);
   letter-spacing: 1px;
-  margin-right: 1.5rem;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
+  margin: 1rem 0 1rem 0.5rem;
 }
 
 .Info {
@@ -70,13 +68,11 @@
     img{
       width: 40px;
       height: 40px;
-      // margin-right: 5px;
     }
     p {
       font-family: $primary-font;
       color: var(--background-color);
       margin-bottom: 0;
-      padding-left: 10px;
       
     }
     p:last-child {
