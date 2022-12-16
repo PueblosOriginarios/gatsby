@@ -9,7 +9,7 @@ export function Footer(): React.ReactElement {
     <footer className="Footer">
       <div className="FooterWrapper">
         <div className="Contacto">
-          <h5 className="Title">Contactanos</h5>
+          <h5 className="Title headline-small">Contactanos</h5>
           <div className="Contactos">
             <Email />
             <Phone />
