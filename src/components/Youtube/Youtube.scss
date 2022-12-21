@@ -1,0 +1,168 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.videoContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+
+  h4 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .video {
+    height: 200px;
+
+    iframe {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: 425px) {
+  .videoContainer {
+    .video {
+      height: 220px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .videoContainer {
+    height: max-content;
+    grid-template-columns: 1fr var(--column-width, 700px) 1fr;
+
+    .video {
+      height: 400px;
+    }
+  }
+}
+/* 
+  
+  @media (min-width: $breakpoint-md) {
+    .DualSymmetric {
+      height: max-content;
+      grid-template-columns:
+        1fr var(--left-column-width, 380px) var(--right-column-width, 380px)
+        1fr;
+      .videoContainer {
+        height: 400px;
+        grid-column: span 2;
+        align-self: center;
+        padding: 3rem 0;
+        &.right {
+          order: 1;
+        }
+      }
+      .imageContainer {
+        grid-column: span 2;
+        height: 100%;
+        img {
+          object-fit: cover;
+        }
+        &.right {
+          order: 1;
+        }
+      }
+      .TextDetails {
+        grid-column: span 1;
+        padding: 3rem 2rem 3rem 2.5rem;
+        align-self: center;
+        &.right {
+          order: 0;
+        }
+      }
+      .emptyRight {
+        &.right {
+          order: -1;
+        }
+      }
+    }
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    .DualSymmetric {
+      height: 600px;
+      grid-template-columns:
+        1fr var(--left-column-width, 480px) var(--right-column-width, 480px)
+        1fr;
+        .TextDetails {
+          padding: 5rem 2rem 5rem 2.5rem;
+        }
+  
+      .videoContainer {
+        height: 400px;
+        width: 100%;
+        align-self: center;
+        justify-self: center;
+      }
+      .imageContainer {
+        height: 600px;
+        img {
+          object-fit: cover;
+        }
+      }
+  
+      .TextDetails {
+        margin-top: 0px;
+      }
+    }
+  }
+  
+  @media (min-width: $breakpoint-xl) {
+    .DualSymmetric {
+      height: 650px;
+      grid-template-columns:
+        1fr var(--left-column-width, 555px) var(--right-column-width, 555px)
+        1fr;
+      .videoContainer {
+        height: 450px;
+      }
+      .imageContainer {
+        height: 650px;
+  
+      }
+    }
+  }
+  
+  @media (min-width: $breakpoint-xxl) {
+    .DualSymmetric {
+      height: 590px;
+      grid-template-columns:
+        1fr var(--left-column-width, 630px) var(--right-column-width, 630px)
+        1fr;
+      .videoContainer {
+        height: 550px;
+      }
+      .imageContainer {
+        height: 590px;
+      }
+    }
+  }
+  
+  @media (min-width: $breakpoint-xxxl) {
+    .DualSymmetric {
+      grid-template-columns:
+        1fr var(--left-column-width, 705px) var(--right-column-width, 705px)
+        1fr;
+      .videoContainer {
+        height: 500px;
+      }
+    }
+  }
+  
+  @media (min-width: $breakpoint-xxxxl) {
+    .DualSymmetric {
+      grid-template-columns:
+        1fr var(--left-column-width, 780px) var(--right-column-width, 780px)
+        1fr;
+      .videoContainer {
+        height: 550px;
+      }
+    }
+  }
+  
+   */

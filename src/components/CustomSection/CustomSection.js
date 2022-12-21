@@ -1,11 +1,9 @@
 import React from "react";
 import { DualSymmetric, TextBlock, Carousel, BannerDoble } from "../";
-import CardsVisitantes from "../CardsVisitantes/CardsVisitantes";
-import useArticle from "../../hooks/useArticle";
+import Youtube from "../Youtube/Youtube";
 
 const CustomSection = ({ sections }) => {
   let checkImagePrint = false;
-  const dataArticles = useArticle().allSanityArticle.nodes;
 
   const sectionsImages = sections?.filter((item) => {
     return item?._type === "imageComponent";
@@ -19,8 +17,8 @@ const CustomSection = ({ sections }) => {
         section?._type === "textBlock" ? (
           <TextBlock
             key={index}
-            subTitle={section.subTitle}
-            richText={section._rawRichText}
+            subTitle={section?.subTitle}
+            richText={section?._rawRichText}
           />
         ) : null}
 
@@ -50,8 +48,12 @@ const CustomSection = ({ sections }) => {
 
         {section?._type !== null &&
         section?._type !== undefined &&
-        section?._type === "booleanArticle" ? (
-          <CardsVisitantes key={index} data={dataArticles} />
+        section?._type === "youtube" ? (
+          <Youtube
+            key={index}
+            titulo={section?.titulo}
+            videoUrl={section?.url}
+          />
         ) : null}
       </>
     );
