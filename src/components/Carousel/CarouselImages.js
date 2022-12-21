@@ -1,27 +1,34 @@
-import React from "react"
-import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
-import { Carousel } from "react-responsive-carousel"
-import SanityImage from "gatsby-plugin-sanity-image"
-import "./CarouselImages.scss"
+import React from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import SanityImage from "gatsby-plugin-sanity-image";
+import "./CarouselImages.scss";
 
-const CarouselImages = ({ images }) => {
-  const imagesResult = images.map((image, idx) => (
+const CarouselImages = ({ data: { title, images } }) => {
+  const imagesResult = images?.map((image, idx) => (
     <div key={idx}>
       <SanityImage {...image} alt="Image Art" />
     </div>
-  ))
+  ));
 
   return (
-    <Carousel
-      autoPlay={true}
-      infiniteLoop={true}
-      showStatus={false}
-      showArrows={true}
-      showThumbs={false}
-    >
-      {imagesResult}
-    </Carousel>
-  )
-}
+    <div className="CarouselContainer">
+      <div className="emptyLeft"></div>
+      <div className="ContentContainer">
+        {title && <h3>{title}</h3>}
+        <Carousel
+          autoPlay={true}
+          infiniteLoop={true}
+          showStatus={false}
+          showArrows={true}
+          showThumbs={false}
+        >
+          {imagesResult}
+        </Carousel>
+      </div>
+      <div className="emptyRight"></div>
+    </div>
+  );
+};
 
-export default CarouselImages
+export default CarouselImages;

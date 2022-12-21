@@ -1,20 +1,71 @@
 @import "../../globalStyles/global.scss";
 @import "../../globalStyles/theme.scss";
 
-.carousel-root{
-  max-width: 500px;
+.CarouselContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.carousel-root {
+  max-width: var(--page-width);
+  height: auto;
   margin: 0 auto;
   .carousel {
     .thumbs-wrapper {
       display: none !important;
     }
-    .control-dots{
-      background: #DFDFDF !important;
-      height: 50px ;
+    .control-dots {
+      background: #dfdfdf !important;
+      height: 50px;
       margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
     }
+  }
+  img {
+    object-fit: contain;
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .CarouselContainer {
+    grid-template-columns: 1fr 550px 1fr;
+  }
+  .carousel-root {
+    max-height: 400px;
+    img {
+      max-height: 400px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .CarouselContainer {
+    grid-template-columns: 1fr 760px 1fr;
+  }
+  .carousel-root {
+    max-height: 500px;
+    img {
+      max-height: 500px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .CarouselContainer {
+    grid-template-columns: 1fr 960px 1fr;
+  }
+  .carousel-root {
+    max-height: none;
+    img {
+      max-height: none;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+  .CarouselContainer {
+    grid-template-columns: 1fr 1110px 1fr;
   }
 }
