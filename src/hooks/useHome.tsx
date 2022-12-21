@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 
 const useHome = () => {
   return useStaticQuery(graphql`
@@ -294,11 +294,37 @@ const useHome = () => {
                 }
               }
             }
+            ... on SanityCarousel {
+              id
+              _type
+              title
+              images {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
+                asset {
+                  _id
+                }
+              }
+            }
           }
         }
       }
     }
-  `)
-}
+  `);
+};
 
-export default useHome
+export default useHome;

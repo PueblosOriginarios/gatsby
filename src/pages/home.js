@@ -12,6 +12,7 @@ import {
   DualSymmetric,
   DualAsymmetric,
   Vigentes,
+  CarouselImages,
 } from "../components/index"
 
 const bodyComponents = {
@@ -21,6 +22,7 @@ const bodyComponents = {
   dualSymmetric: data => <DualSymmetric data={data} key={data?.id} />,
   dualAsymmetric: data => <DualAsymmetric data={data} key={data?.id} />,
   vigentes: data => <Vigentes data={data} key={data?.id} />,
+  carousel : data => <CarouselImages data={data} key={data?.id} />,
 }
 
 export default function Home() {
