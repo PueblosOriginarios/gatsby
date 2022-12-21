@@ -1,31 +1,29 @@
-const path = require("path")
+const path = require("path");
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
-  // CREACION DE PAGINAS DE ARTÍCULO
-  const { data: articleQueryData } = await graphql(`
-    query Articles {
-      allSanityArticle {
+  // CREACION DE PAGINAS DE HISTORIA
+  const { data: historiaQueryData } = await graphql(`
+    query Historia {
+      allSanityHistoria {
         nodes {
-          slug {
-            current
-          }
+          tipoHistoria
         }
       }
     }
-  `)
+  `);
 
-  if (articleQueryData.errors) {
-    reporter.panicOnBuild("Error creando paginas de article")
+  if (historiaQueryData.errors) {
+    reporter.panicOnBuild("Error creando paginas de historia");
   }
 
-  articleQueryData.allSanityArticle.nodes.forEach(node => {
-    const articleDetail = path.resolve("./src/templates/ArticlePage.js")
+  historiaQueryData.allSanityHistoria.nodes.forEach((node) => {
+    const historiaDetail = path.resolve("./src/templates/Historia.js");
     createPage({
-      path: "/visitantes/" + node.slug.current,
-      component: articleDetail,
-      context: { slug: node.slug.current },
-    })
-  })
-}
+      path: node.tipoHistoria + "/historia/",
+      component: historiaDetail,
+      context: { slug: node.tipoHistoria },
+    });
+  });
+};

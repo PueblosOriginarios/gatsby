@@ -1,0 +1,42 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.videoContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+
+  h4 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .video {
+    height: 200px;
+
+    iframe {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: 425px) {
+  .videoContainer {
+    .video {
+      height: 220px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .videoContainer {
+    height: max-content;
+    grid-template-columns: 1fr var(--column-width, 700px) 1fr;
+
+    .video {
+      height: 400px;
+    }
+  }
+}
