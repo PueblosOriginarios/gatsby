@@ -138,27 +138,28 @@ export const query = graphql`
               imageSide
             }
           }
-          ... on SanityImageComponent {
-            _key
-            _type
-            asset {
-              _id
-            }
-            crop {
-              _key
-              _type
-              bottom
-              left
-              right
-              top
-            }
-            hotspot {
-              _key
-              _type
-              height
-              width
-              x
-              y
+          ... on SanityCarousel {
+            title
+            images {
+              asset {
+                _id
+              }
+              hotspot {
+                _key
+                _type
+                height
+                width
+                x
+                y
+              }
+              crop {
+                _key
+                _type
+                bottom
+                left
+                top
+                right
+              }
             }
           }
           ... on SanityTextBlock {
