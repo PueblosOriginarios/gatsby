@@ -9,7 +9,6 @@ import {
 
 const CustomSection = ({ sections }) => {
   const sectionResult = sections?.map((section, index) => {
-    console.log(section);
     return (
       <>
         {section?._type !== null &&
