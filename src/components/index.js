@@ -2,7 +2,7 @@ import Banner from "./Banner/Banner"
 import BannerDoble from "./BannerDoble/BannerDoble"
 import CustomSection from "./CustomSection/CustomSection"
 import Card from "./Card/Card"
-import Carousel from "./Carousel/CarouselImages"
+import CarouselImages from "./Carousel/CarouselImages"
 import DualAsymmetric from "./DualAsymmetric/DualAsymmetric"
 import DualSymmetric from "./DualSymmetric/DualSymmetric"
 import { Hero } from "./Hero/index"
@@ -14,7 +14,7 @@ export {
   BannerDoble,
   CustomSection,
   Card,
-  Carousel,
+  CarouselImages,
   DualAsymmetric,
   DualSymmetric,
   Hero,
