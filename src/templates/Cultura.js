@@ -5,11 +5,11 @@ import SanityImage from "gatsby-plugin-sanity-image";
 import { CustomSection } from "../components/index";
 import "./Historia.scss";
 
-const HistoriaPage = ({ data }) => {
+const CulturaPage = ({ data }) => {
   console.log(data);
-  const { title, imageHeader } = data?.allSanityHistoria?.nodes[0];
+  const { title, imageHeader } = data?.allSanityCultura?.nodes[0];
 
-  const pageInfo = data?.allSanityHistoria?.nodes[0];
+  const pageInfo = data?.allSanityCultura?.nodes[0];
   console.log(pageInfo);
 
   return (
@@ -42,21 +42,21 @@ const HistoriaPage = ({ data }) => {
             </div>
             <div className='empty-right'></div>
           </div>
-          <CustomSection sections={pageInfo?.HistoriaBuilder} />
+          <CustomSection sections={pageInfo?.CulturaBuilder} />
         </section>
       </Page>
     </>
   );
 };
 
-export default HistoriaPage;
+export default CulturaPage;
 
 export const query = graphql`
   query($slug: String!) {
-    allSanityHistoria(filter: { tipoHistoria: { eq: $slug } }) {
+    allSanityCultura(filter: { tipoCultura: { eq: $slug } }) {
       nodes {
         title
-        tipoHistoria
+        tipoCultura
         imageHeader {
           asset {
             _id
@@ -78,23 +78,31 @@ export const query = graphql`
             y
           }
         }
-        HistoriaBuilder {
+        CulturaBuilder {
           ... on SanityDualSectionArray {
             _key
             _type
             dualSymmetric {
+              youtubeVideo {
+                titulo
+                url
+              }
+              titleDualS
+              shortText
+              imageSide
               _rawRichTextDualS
               backgroundColor {
                 title
                 value
               }
-              titleDualS
-              shortText
               button {
                 link
                 nameButton
               }
               iconObject {
+                description
+                label
+                link
                 imageIcon {
                   asset {
                     _id
@@ -110,26 +118,20 @@ export const query = graphql`
                   hotspot {
                     _key
                     _type
-                    height
                     width
+                    height
                     x
                     y
                   }
                 }
-                label
-                link
-                description
-              }
-              youtubeVideo {
-                url
               }
               imageDualS {
                 asset {
                   _id
                 }
                 crop {
-                  _type
                   _key
+                  _type
                   bottom
                   left
                   right
@@ -144,7 +146,6 @@ export const query = graphql`
                   y
                 }
               }
-              imageSide
             }
           }
           ... on SanityCarousel {
@@ -152,6 +153,14 @@ export const query = graphql`
             images {
               asset {
                 _id
+              }
+              crop {
+                _key
+                _type
+                bottom
+                left
+                right
+                top
               }
               hotspot {
                 _key
@@ -161,15 +170,8 @@ export const query = graphql`
                 x
                 y
               }
-              crop {
-                _key
-                _type
-                bottom
-                left
-                top
-                right
-              }
             }
+            id
           }
           ... on SanityTextBlock {
             _key
@@ -180,8 +182,8 @@ export const query = graphql`
           ... on SanityYoutube {
             _key
             _type
-            url
             titulo
+            url
           }
         }
       }

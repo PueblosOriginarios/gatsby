@@ -1,7 +1,7 @@
 @import "../../globalStyles/global.scss";
 @import "../../globalStyles/theme.scss";
 
-.videoContainer {
+.youtubeContainer {
   display: grid;
   grid-template-columns: 1fr;
   padding: 0 1.5rem;
@@ -31,7 +31,7 @@
 }
 
 @media (min-width: $breakpoint-md) {
-  .videoContainer {
+  .youtubeContainer {
     height: max-content;
     grid-template-columns: 1fr var(--column-width, 700px) 1fr;
 
