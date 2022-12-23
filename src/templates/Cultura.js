@@ -33,7 +33,7 @@ const CulturaPage = ({ data }) => {
                 {title && (
                   <>
                     <h5 className='title'>{title}</h5>
-                    <div className='vacio'></div>
+                    <div className='vacio mb-5'></div>
                   </>
                 )}
 
