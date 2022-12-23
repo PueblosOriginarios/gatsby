@@ -19,7 +19,7 @@ const CulturaPage = ({ data }) => {
           <div className='articleHeader'>
             <div className='empty-left'></div>
 
-            <div>
+            <div className='mb-5'>
               {imageHeader && (
                 <SanityImage
                   {...imageHeader}
@@ -33,7 +33,7 @@ const CulturaPage = ({ data }) => {
                 {title && (
                   <>
                     <h5 className='title'>{title}</h5>
-                    <div className='vacio mb-5'></div>
+                    <div className='vacio'></div>
                   </>
                 )}
 
