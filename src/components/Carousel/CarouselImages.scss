@@ -1,20 +1,99 @@
 @import "../../globalStyles/global.scss";
 @import "../../globalStyles/theme.scss";
 
-.carousel-root{
-  max-width: 500px;
+.CarouselContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1.5rem 0;
+  h3 {
+    padding: 1.5rem;
+    margin: 0 !important;
+  }
+}
+
+.carousel-root {
+  max-width: 300px;
   margin: 0 auto;
   .carousel {
     .thumbs-wrapper {
       display: none !important;
     }
-    .control-dots{
-      background: #DFDFDF !important;
-      height: 50px ;
+    .control-dots {
+      background: #dfdfdf !important;
+      height: 50px;
       margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
     }
+  }
+  img {
+    object-fit: cover;
+  }
+  .slider-wrapper {
+    height: 450px;
+    .slider {
+      height: 100%;
+      img {
+        height: 450px;
+        width: auto;
+        min-width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .CarouselContainer {
+    grid-template-columns: 1fr 550px 1fr;
+  }
+  .carousel-root {
+    max-width: 600px;
+    .slider-wrapper {
+      height: 500px;
+      .slider {
+        img {
+          height: 500px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .CarouselContainer {
+    grid-template-columns: 1fr 760px 1fr;
+  }
+  .carousel-root {
+    max-width: 700px;
+    .slider-wrapper {
+      height: 600px;
+      .slider {
+        img {
+          height: 600px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .CarouselContainer {
+    grid-template-columns: 1fr 960px 1fr;
+    h3 {
+      text-align: center;
+    }
+  }
+  .carousel-root {
+    max-width: 800px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+  .CarouselContainer {
+    grid-template-columns: 1fr 1110px 1fr;
+  }
+  .carousel-root {
+    max-width: 900px;
   }
 }

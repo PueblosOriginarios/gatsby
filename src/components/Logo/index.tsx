@@ -15,15 +15,15 @@ export function Logo(): React.ReactElement {
         <SanityImage
           {...headerImageDesktop}
           alt="Logo bitlogic"
-          width={180}
-          style={{ objectFit: "scale-down", maxWidth: "180px" }}
+          width={120}
+          style={{ objectFit: "scale-down", maxWidth: "120px" }}
         />
       ) : (
         <SanityImage
           {...headerImageMobile}
           alt="Logo bitlogic"
-          width={180}
-          style={{ objectFit: "scale-down", maxWidth: "180px" }}
+          width={100}
+          style={{ objectFit: "scale-down", maxWidth: "100px" }}
         />
       )}
     </div>

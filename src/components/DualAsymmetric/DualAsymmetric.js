@@ -20,7 +20,7 @@ const DualAsymmetric = ({
   const bgColorText =
     imageSide === "left" ? colorRight?.value : colorLeft?.value
 
-  const darkColors = ["#0A694D", "#868585", "#1B1C1E"]
+  const darkColors = ["#4e7706", "#868585", "#1B1C1E"]
   const textColor = darkColors.includes(bgColorText) ? "#FCFCFC" : "#1B1C1E"
   const buttonColor = darkColors.includes(bgColorText)
     ? "alternative"

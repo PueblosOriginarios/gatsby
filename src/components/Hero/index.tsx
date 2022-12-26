@@ -5,7 +5,6 @@ import { Section } from "../../components/Section"
 import { HeroContent } from "../../types"
 import { PortableText } from "@portabletext/react"
 import * as classes from "./style.module.css"
-import SocialMedia from "../SocialMedia/SocialMedia"
 
 export function Hero(props: HeroContent): React.ReactElement {
   const heroImage = props?.data?.imageHero
@@ -24,11 +23,6 @@ export function Hero(props: HeroContent): React.ReactElement {
                     </div>
                     <h4 className={classes.Title}>{props?.data?.titleHero}</h4>
                     <PortableText value={props?.data?._rawRichTextHero} />
-                    <Animation type="fadeLeft" delay={800}>
-                        {props?.data?.socialNetworks === true ? (
-                            <SocialMedia logo={undefined} />
-                        ) : null}
-                    </Animation>
                 </div>
             </Section>
         </Animation>

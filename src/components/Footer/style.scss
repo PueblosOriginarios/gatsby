@@ -8,8 +8,7 @@
   height: fit-content;
 }
 
-
-
+// class to center footer content
 .FooterWrapper {
   width: 100%;
   max-width: var(--page-width);
@@ -18,38 +17,18 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  @media (min-width: 768px) {
-    max-width: 760px;
-}
-  @media (min-width: 992px) {
-    max-width: 960px;
-}
-@media (min-width: 1200px){
-      max-width: 1110px;
-}
-@media (min-width: 1400px){
-  max-width: 1260px;
-}
-@media (min-width: 1600px){
-  max-width: 1410px;
-}
-@media (min-width: 1800px){
-  max-width: 1560px;
-}
 }
 
 .Links a {
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-md) {
     margin-right: 4rem;
-}
+  }
 }
 
 .Footer .Title {
   color: var(--background-color);
   letter-spacing: 1px;
-  margin-right: 1.5rem;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
+  margin: 1rem 0 1rem 0.5rem;
 }
 
 .Info {
@@ -58,43 +37,23 @@
   align-items: center;
 }
 
-
-.Redes {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin:0 auto;
-  margin-bottom: 3rem;
-  @media (min-width: 768px) {
-    margin: 0;
-    margin-left: auto;
-    margin-top: 3rem;
-    justify-content: start;
-}
-}
-
 .Contacto {
   margin: 3rem 0;
   align-self: center;
   .Contactos {
-    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex-wrap: nowrap;
 
-    img{
+    img {
       width: 40px;
       height: 40px;
-      // margin-right: 5px;
     }
     p {
       font-family: $primary-font;
       color: var(--background-color);
       margin-bottom: 0;
-      padding-left: 10px;
-      
     }
     p:last-child {
       margin-right: 0;
@@ -102,6 +61,45 @@
   }
 }
 
-
-
-
+@media (min-width: $breakpoint-md) {
+  .FooterWrapper {
+    max-width: 760px;
+  }
+  .Contacto .Contactos {
+    flex-direction: row;
+  }
+  .Contacto .Contactos div:first-child {
+    margin-left: 0;
+  }
+  .Info {
+    margin-left: 1rem;
+  }
+}
+@media (min-width: $breakpoint-lg) {
+  .FooterWrapper {
+    max-width: 960px;
+  }
+  .Info {
+    margin-left: 2rem;
+  }
+}
+@media (min-width: $breakpoint-xl) {
+  .FooterWrapper {
+    max-width: 1110px;
+  }
+}
+@media (min-width: $breakpoint-xxl) {
+  .FooterWrapper {
+    max-width: 1260px;
+  }
+}
+@media (min-width: $breakpoint-xxxl) {
+  .FooterWrapper {
+    max-width: 1410px;
+  }
+}
+@media (min-width: $breakpoint-xxxxl) {
+  .FooterWrapper {
+    max-width: 1560px;
+  }
+}

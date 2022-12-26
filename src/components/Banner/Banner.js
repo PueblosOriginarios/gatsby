@@ -5,7 +5,7 @@ import "./Banner.scss"
 const Banner = ({ data: { title, description, color, image } }) => {
   const textColor = color?.value === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
   const showText = image === null ? true : undefined
-  const bgColor = color === null ? "#0A694D" : color?.value
+  const bgColor = color === null ? "#4e7706" : color?.value
   const altText = description === null ? "Banner" : description
 
   return (
