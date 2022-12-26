@@ -26,4 +26,28 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: node.tipoHistoria },
     });
   });
+
+  // CREACION DE PAGINAS DE CULTURA
+  const { data: culturaQueryData } = await graphql(`
+    query Cultura {
+      allSanityCultura {
+        nodes {
+          tipoCultura
+        }
+      }
+    }
+  `);
+
+  if (culturaQueryData.errors) {
+    reporter.panicOnBuild("Error creando paginas de cultura");
+  }
+
+  culturaQueryData.allSanityCultura.nodes.forEach((node) => {
+    const culturaDetail = path.resolve("./src/templates/Cultura.js");
+    createPage({
+      path: node.tipoCultura + "/cultura/",
+      component: culturaDetail,
+      context: { slug: node.tipoCultura },
+    });
+  });
 };
