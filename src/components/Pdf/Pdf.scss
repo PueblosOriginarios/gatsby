@@ -1,0 +1,56 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.Pdf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  img {
+    max-width: 280px;
+    margin: 0 1rem;
+  }
+  .Button {
+    @include primaryBtn;
+    margin: 1rem auto 0;
+  }
+}
+
+.Pdf .DescriptionContainer {
+  margin: 1rem 1.5rem;
+  p {
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .Pdf {
+    img {
+      max-width: 400px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .Pdf {
+    flex-direction: row;
+    img {
+      max-width: 450px;
+    }
+    .Button {
+      margin: 1rem 0;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .Pdf {
+    justify-content: flex-start;
+    img {
+      max-width: 500px;
+      margin: 0 1.5rem;
+    }
+  }
+  .PDF .DescriptionContainer {
+    margin: 1rem 1.5rem;
+  }
+}
