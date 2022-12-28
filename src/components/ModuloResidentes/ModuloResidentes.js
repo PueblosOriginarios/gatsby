@@ -1,10 +1,9 @@
-import React from "react"
-import { PortableText } from "@portabletext/react"
-import LogosResidentes from "../LogosSections/LogosSections"
-import "./ModuloResidentes.scss"
+import React from "react";
+import { PortableText } from "@portabletext/react";
+import LogosResidentes from "../LogosSections/LogosSections";
+import "./ModuloResidentes.scss";
 
 export default function ModuloResidentes({ data }) {
-  console.log(data)
   return (
     <>
       <div className="textResident">
@@ -15,5 +14,5 @@ export default function ModuloResidentes({ data }) {
 
       <LogosResidentes data={data.logos} />
     </>
-  )
+  );
 }
