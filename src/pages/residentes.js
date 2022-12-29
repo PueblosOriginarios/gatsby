@@ -11,7 +11,6 @@ import "./residentes.scss"
 
 export default function Residentes() {
   const data = useResidentes().allSanityResidentes.nodes[1]
-  console.log(data, "data")
   return (
     <>
       <Page>

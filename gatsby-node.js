@@ -50,4 +50,30 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: node.tipoCultura },
     });
   });
+
+  // CREACION DE PAGINAS DE PDFs
+  const { data: pdfQueryData } = await graphql(`
+    query PDF {
+      allSanityPdf {
+        nodes {
+          slug {
+            current
+          }
+        }
+      }
+    }
+  `);
+
+  if (pdfQueryData.errors) {
+    reporter.panicOnBuild("Error creando paginas de PDFs");
+  }
+
+  pdfQueryData.allSanityPdf.nodes.forEach((node) => {
+    const pdfDetail = path.resolve("./src/templates/PdfPage.js");
+    createPage({
+      path: "/pdf/" + node.slug.current,
+      component: pdfDetail,
+      context: { slug: node.slug.current },
+    });
+  });
 };
