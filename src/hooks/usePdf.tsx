@@ -5,6 +5,7 @@ const usePdf = () => {
     {
       allSanityPdf {
         nodes {
+          _id
           categoryReferences {
             categoryReference {
               category

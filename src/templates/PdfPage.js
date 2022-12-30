@@ -38,6 +38,7 @@ export const query = graphql`
   query($slug: String!) {
     allSanityPdf(filter: { slug: { current: { eq: $slug } } }) {
       nodes {
+        _id
         categoryReferences {
           categoryReference {
             category
