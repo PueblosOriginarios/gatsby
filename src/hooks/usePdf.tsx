@@ -16,6 +16,7 @@ const usePdf = () => {
           slug {
             current
           }
+          tipoPdf
           image {
             crop {
               _key

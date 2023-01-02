@@ -10,35 +10,83 @@ const Materiales = ({ data }) => {
 
   const [filteredPdfs, setFilteredPdfs] = useState(pdfs);
   const [pdfCards, setPdfCards] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [categoriesButtons, setCategoriesButtons] = useState([]);
 
-  const categoriesButtons = categories?.map((category) => {
-    return (
-      <button
-        key={category?._id}
-        className="Category Button"
-        onClick={() => {
-          filterPdfs(category?.category);
-        }}
-      >
-        {category?.category}
-      </button>
-    );
-  });
-
-  const filterPdfs = (category) => {
-    setFilteredPdfs(
-      pdfs.filter((pdf) => {
-        let isCategory = false;
-        pdf?.categoryReferences?.map((ref) => {
-          isCategory =
-            isCategory || ref?.categoryReference?.category === category;
-        });
-        return isCategory;
-      })
-    );
-
+  const addCategory = (category) => {
+    if (selectedCategories?.includes(category)) {
+      // if the category is already selected, remove it
+      let temp = selectedCategories;
+      temp.splice(temp.indexOf(category), 1);
+      setSelectedCategories(temp);
+    } else {
+      setSelectedCategories(selectedCategories.concat(category));
+    }
   };
 
+  // Filter buttons
+  const updateButtons = () => {
+    setCategoriesButtons(
+      categories?.map((category) => {
+        let selected = selectedCategories.includes(category?.category)
+          ? "Selected"
+          : "";
+        return (
+          <button
+            key={category?._id}
+            className={`Category Button ${selected}`}
+            onClick={() => {
+              filterPdfs(category);
+            }}
+          >
+            {category?.category}
+          </button>
+        );
+      })
+    );
+  };
+
+  const updatePdfs = () => {
+    if (0 < selectedCategories.length) {
+      // filter by category and type
+      setFilteredPdfs(
+        pdfs.filter((pdf) => {
+          let isCategory = false;
+          let isType =
+            pdf?.tipoPdf === pageInfo?.tipoMateriales ||
+            pdf?.tipoPdf === "ambos";
+          pdf?.categoryReferences?.map((ref) => {
+            isCategory =
+              isCategory ||
+              selectedCategories?.includes(ref?.categoryReference?.category);
+          });
+          return isCategory && isType;
+        })
+      );
+    } else {
+      setFilteredPdfs(
+        pdfs.filter((pdf) => {
+          let isType =
+            pdf?.tipoPdf === pageInfo?.tipoMateriales ||
+            pdf?.tipoPdf === "ambos";
+          return isType;
+        })
+      );
+    }
+  };
+
+  const filterPdfs = (category) => {
+    addCategory(category?.category);
+    updateButtons();
+    updatePdfs();
+  };
+
+  useEffect(() => {
+    updateButtons();
+    updatePdfs();
+  }, [selectedCategories, updateButtons, updatePdfs]);
+
+  // Cards rendered
   useEffect(() => {
     const filteredCards = filteredPdfs.map((pdf) => {
       const pdfSlug = `pdf/${pdf?.slug?.current}`;
@@ -85,6 +133,7 @@ export const query = graphql`
         slug {
           current
         }
+        tipoPdf
         categoryReferences {
           categoryReference {
             category
