@@ -3,7 +3,7 @@ import { Page } from "../components/index";
 import { graphql } from "gatsby";
 import SanityImage from "gatsby-plugin-sanity-image";
 import { CustomSection } from "../components/index";
-import "./Historia.scss";
+import "./Cultura.scss";
 
 const CulturaPage = ({ data }) => {
   const { title, imageHeader } = data?.allSanityCultura?.nodes[0];
