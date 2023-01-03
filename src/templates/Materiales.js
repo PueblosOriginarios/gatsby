@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Page, Card } from "../components/index";
 import { graphql } from "gatsby";
 import "./Materiales.scss";
@@ -25,7 +25,7 @@ const Materiales = ({ data }) => {
   };
 
   // Filter buttons
-  const updateButtons = () => {
+  const updateButtons = useCallback(() => {
     setCategoriesButtons(
       categories?.map((category) => {
         let selected = selectedCategories.includes(category?.category)
@@ -36,7 +36,9 @@ const Materiales = ({ data }) => {
             key={category?._id}
             className={`Category Button ${selected}`}
             onClick={() => {
-              filterPdfs(category);
+              addCategory(category?.category);
+              updateButtons();
+              updatePdfs();
             }}
           >
             {category?.category}
@@ -44,7 +46,7 @@ const Materiales = ({ data }) => {
         );
       })
     );
-  };
+  }, [categories, selectedCategories]);
 
   const updatePdfs = () => {
     if (0 < selectedCategories.length) {
@@ -59,6 +61,7 @@ const Materiales = ({ data }) => {
             isCategory =
               isCategory ||
               selectedCategories?.includes(ref?.categoryReference?.category);
+            return isCategory;
           });
           return isCategory && isType;
         })
@@ -73,12 +76,6 @@ const Materiales = ({ data }) => {
         })
       );
     }
-  };
-
-  const filterPdfs = (category) => {
-    addCategory(category?.category);
-    updateButtons();
-    updatePdfs();
   };
 
   useEffect(() => {
