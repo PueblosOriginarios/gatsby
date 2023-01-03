@@ -1,6 +1,6 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { Page, Pdf } from "../components/index";
+import { graphql } from "gatsby";
 import { PortableText } from "@portabletext/react";
 import "./PdfPage.scss";
 

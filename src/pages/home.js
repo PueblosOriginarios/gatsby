@@ -8,20 +8,16 @@ import { Seo } from "../components/seo";
 import {
   Banner,
   BannerDoble,
-  Hero,
   DualSymmetric,
   DualAsymmetric,
-  Vigentes,
   CarouselImages,
 } from "../components/index";
 
 const bodyComponents = {
   banner: (data) => <Banner data={data} key={data?.id} />,
   bannerDoble: (data) => <BannerDoble data={data} key={data?.id} />,
-  hero: (data) => <Hero data={data} key={data?.id} />,
   dualSymmetric: (data) => <DualSymmetric data={data} key={data?.id} />,
   dualAsymmetric: (data) => <DualAsymmetric data={data} key={data?.id} />,
-  vigentes: (data) => <Vigentes data={data} key={data?.id} />,
   carousel: (data) => <CarouselImages data={data} key={data?.id} />,
 };
 

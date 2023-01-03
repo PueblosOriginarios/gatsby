@@ -1,31 +1,21 @@
-import SanityImage from "gatsby-plugin-sanity-image"
-import React from "react"
-import useHeader from "../../hooks/useHeader"
-import { useMediaQuery } from "../../hooks/useMediaQuery"
-import "./style.css"
+import SanityImage from "gatsby-plugin-sanity-image";
+import React from "react";
+import useHeader from "../../hooks/useHeader";
+import "./style.css";
 
 export function Logo(): React.ReactElement {
-  const isDesktopBreakpoint = useMediaQuery("(min-width: 992px)")
-  const headerImageDesktop = useHeader().allSanityHeader?.nodes[0]?.logo
-  const headerImageMobile = useHeader().allSanityHeader?.nodes[0]?.logoMobile
+  const headerImageDesktop = useHeader().allSanityHeader?.nodes[0]?.logo;
 
   return (
     <div className={"Logo"} aria-roledescription="logo">
-      {isDesktopBreakpoint ? (
+      {headerImageDesktop && (
         <SanityImage
           {...headerImageDesktop}
-          alt="Logo bitlogic"
+          alt="Logo"
           width={120}
           style={{ objectFit: "scale-down", maxWidth: "120px" }}
         />
-      ) : (
-        <SanityImage
-          {...headerImageMobile}
-          alt="Logo bitlogic"
-          width={100}
-          style={{ objectFit: "scale-down", maxWidth: "100px" }}
-        />
       )}
     </div>
-  )
+  );
 }

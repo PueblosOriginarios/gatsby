@@ -1,7 +1,3 @@
-import '@fontsource/gothic-a1/400.css';
-import "@fontsource/gothic-a1/700.css";
-import '../../globalStyles/global.scss';
-import '../../globalStyles/theme.scss';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Theme, useGlobalState } from '../../context';
@@ -10,6 +6,10 @@ import { Footer } from '../Footer/index';
 import { Header } from '../Header/index';
 import { CookieBar } from '../CookieBar';
 import * as classes from './style.module.css';
+import '@fontsource/gothic-a1/400.css';
+import "@fontsource/gothic-a1/700.css";
+import '../../globalStyles/global.scss';
+import '../../globalStyles/theme.scss';
 
 interface LayoutProps {
     children: React.ReactElement;
