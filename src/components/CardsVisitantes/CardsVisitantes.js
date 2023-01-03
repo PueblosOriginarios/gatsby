@@ -5,7 +5,6 @@ import "./CardsVisitants.scss";
 
 const CardsVisitantes = ({ data }) => {
   console.log(data);
-  console.log("HOLa");
   const cardsComponent = data?.map((article) => {
     const articleData = {
       title: article?.title,

@@ -9,7 +9,7 @@ import "./Noticias.scss";
 const NoticiasPage = ({ data }) => {
   const { title } = data?.allSanityNoticias?.nodes[0];
 
-  const pageInfo = data?.allSanityNoticias?.nodes;
+  const pageInfo = data?.allSanityNoticias?.nodes[0];
 
   const dataArticle = useArticle().allSanityArticle?.nodes;
   console.log(dataArticle);
@@ -42,6 +42,7 @@ const NoticiasPage = ({ data }) => {
             </div>
             <div className='empty-right'></div>
           </div>
+          <CardsVisitantes data={dataArticle} />
           <CustomSection sections={pageInfo?.noticiasBuilder} />
         </section>
       </Page>
