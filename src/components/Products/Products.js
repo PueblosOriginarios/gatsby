@@ -1,11 +1,11 @@
-import React from "react"
-import "./Products.scss"
-import ProductCard from "./ProductCard"
+import React from "react";
+import "./Products.scss";
+import ProductCard from "./ProductCard";
 
-const Products = data => {
-  console.log(data.data, "productos")
-
-  const productCards = data?.data.map((card, id) => <ProductCard data={card} />)
+const Products = (data) => {
+  const productCards = data?.data.map((card, id) => (
+    <ProductCard data={card} />
+  ));
 
   return (
     <>
@@ -21,7 +21,7 @@ const Products = data => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

@@ -1,13 +1,21 @@
- import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 
-const useHero = () => {
+const usePdf = () => {
   return useStaticQuery(graphql`
     {
-      allSanityHero {
+      allSanityPdf {
         nodes {
-          titleHero
-          _rawRichTextHero
-          imageHero {
+          categoryReferences {
+            categoryReference {
+              category
+            }
+          }
+          title
+          link
+          slug {
+            current
+          }
+          image {
             crop {
               _key
               _type
@@ -28,12 +36,13 @@ const useHero = () => {
               _id
             }
           }
+          _rawCenteredText
+          _rawShortDescription
+          _rawDescription
         }
       }
     }
-    
-  `)
-}
+  `);
+};
 
-export default useHero
- 
+export default usePdf;

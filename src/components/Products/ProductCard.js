@@ -4,7 +4,6 @@ import { PortableText } from "@portabletext/react"
 import "./Products.scss"
 
 const ProductCard = data => {
-  console.log(data, "productos")
 
   return (
     <div className="ProductCard">
