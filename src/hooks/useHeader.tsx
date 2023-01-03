@@ -13,27 +13,6 @@ const useHeader = () => {
               link
             }
           }
-          logoMobile {
-            asset {
-              _id
-            }
-            crop {
-              _key
-              _type
-              bottom
-              left
-              right
-              top
-            }
-            hotspot {
-              _key
-              _type
-              height
-              width
-              x
-              y
-            }
-          }
           logo {
             crop {
               _key
