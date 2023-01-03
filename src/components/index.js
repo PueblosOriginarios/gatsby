@@ -11,6 +11,7 @@ import Pdf from "./Pdf/Pdf";
 import TextBlock from "./TextBlock/TextBlock";
 import Vigentes from "./Vigentes/Vigentes";
 import Youtube from "./Youtube/Youtube";
+import CardsVisitantes from "./CardsVisitantes/CardsVisitantes";
 
 export {
   Banner,
@@ -26,4 +27,5 @@ export {
   TextBlock,
   Vigentes,
   Youtube,
+  CardsVisitantes,
 };

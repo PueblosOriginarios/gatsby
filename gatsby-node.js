@@ -76,4 +76,55 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: node.slug.current },
     });
   });
+
+  // CREACION DE PAGINA DE NOTICIAS
+  const { data: noticiaQueryData } = await graphql(`
+    query Noticia {
+      allSanityNoticias {
+        nodes {
+          tipoNoticias
+        }
+      }
+    }
+  `);
+
+  if (noticiaQueryData.errors) {
+    reporter.panicOnBuild("Error creando paginas de noticias");
+  }
+
+  noticiaQueryData.allSanityNoticias.nodes.forEach((node) => {
+    const noticiaDetail = path.resolve("./src/templates/Noticias.js");
+    createPage({
+      path: node.tipoNoticias + "/noticias",
+      component: noticiaDetail,
+      context: { slug: node.tipoNoticias },
+    });
+  });
+
+  // CREACION DE PAGINAS DE ARTICULOS NOTICIAS
+  const { data: articleNoticiaQueryData } = await graphql(`
+    query articleNoticia {
+      allSanityArticle {
+        nodes {
+          tipoArticuloNoticia
+          slug {
+            current
+          }
+        }
+      }
+    }
+  `);
+
+  if (articleNoticiaQueryData.errors) {
+    reporter.panicOnBuild("Error creando paginas de articulo noticia");
+  }
+
+  articleNoticiaQueryData.allSanityArticle.nodes.forEach((node) => {
+    const articleNoticiaDetail = path.resolve("./src/templates/ArticlePage.js");
+    createPage({
+      path: node.tipoArticuloNoticia + "/noticias/" + node.slug.current,
+      component: articleNoticiaDetail,
+      context: { slug: node.slug.current },
+    });
+  });
 };
