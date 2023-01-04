@@ -35,7 +35,6 @@ const Materiales = ({ data }) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   const filterPdfs = useCallback(() => {
-    console.log("filtering");
     if (selectedCategories.length === 0) {
       setPdfCards(pdfs);
     } else {
@@ -50,7 +49,6 @@ const Materiales = ({ data }) => {
   }, [pdfs, selectedCategories]);
 
   useEffect(() => {
-    console.log("useEffect");
     filterPdfs();
   }, [selectedCategories, filterPdfs]);
 
