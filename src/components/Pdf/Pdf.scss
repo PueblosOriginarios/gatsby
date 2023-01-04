@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   img {
-    max-width: 320px;
+    max-width: min(100%, 320px);
     margin: 0 1.5rem;
   }
   .Button {
