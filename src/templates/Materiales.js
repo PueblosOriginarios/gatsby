@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Page, Card } from "../components/index";
+import { Seo } from "../components/seo";
 import { graphql } from "gatsby";
 import "./Materiales.scss";
 
@@ -63,17 +64,24 @@ const Materiales = ({ data }) => {
   });
 
   return (
-    <Page>
-      <section className="Materiales">
-        <div className="empty-left"></div>
-        <div>
-          <h3>{pageInfo?.title}</h3>
-          <div className="CategoriesContainer">{buttons}</div>
-          <div className="CardsContainer">{cards}</div>
-        </div>
-        <div className="empty-right"></div>
-      </section>
-    </Page>
+    <>
+      <Seo
+        title="Materiales"
+        description="Página con información de la historia del pueblo originario"
+        keywords="Historia, Información, Pueblos, Originarios"
+      />
+      <Page>
+        <section className="Materiales">
+          <div className="empty-left"></div>
+          <div>
+            <h3>{pageInfo?.title}</h3>
+            <div className="CategoriesContainer">{buttons}</div>
+            <div className="CardsContainer">{cards}</div>
+          </div>
+          <div className="empty-right"></div>
+        </section>
+      </Page>
+    </>
   );
 };
 
