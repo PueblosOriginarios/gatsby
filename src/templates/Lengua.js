@@ -56,101 +56,74 @@ export const query = graphql`
     allSanityLengua(filter: { tipoLengua: { eq: $slug } }) {
       nodes {
         title
-        tipoLengua
-        imageHeader {
-          asset {
-            _id
-          }
-          crop {
-            _key
-            _type
-            bottom
-            left
-            right
-            top
-          }
-          hotspot {
-            _key
-            _type
-            height
-            width
-            x
-            y
-          }
+      tipoLengua
+      imageHeader {
+        asset {
+          _id
         }
-        LenguaBuilder {
-          ... on SanityDualSectionArray {
-            _key
-            _type
-            dualSymmetric {
-              youtubeVideo {
-                titulo
-                url
+        crop {
+          _key
+          _type
+          bottom
+          left
+          right
+          top
+        }
+        hotspot {
+          _key
+          _type
+          height
+          width
+          x
+          y
+        }
+      }
+      LenguaBuilder {
+        ... on SanityCarousel {
+          title
+            images {
+              asset {
+                _id
               }
-              titleDualS
-              shortText
-              imageSide
-              _rawRichTextDualS
-              backgroundColor {
-                title
-                value
+              hotspot {
+                _key
+                _type
+                height
+                width
+                x
+                y
               }
-              button {
-                link
-                nameButton
-              }
-              iconObject {
-                description
-                label
-                link
-                imageIcon {
-                  asset {
-                    _id
-                  }
-                  crop {
-                    _key
-                    _type
-                    bottom
-                    left
-                    right
-                    top
-                  }
-                  hotspot {
-                    _key
-                    _type
-                    width
-                    height
-                    x
-                    y
-                  }
-                }
-              }
-              imageDualS {
-                asset {
-                  _id
-                }
-                crop {
-                  _key
-                  _type
-                  bottom
-                  left
-                  right
-                  top
-                }
-                hotspot {
-                  _key
-                  _type
-                  height
-                  width
-                  x
-                  y
-                }
+              crop {
+                _key
+                _type
+                bottom
+                left
+                top
+                right
               }
             }
-          }
-          ... on SanityCarousel {
-            title
-            images {
+        }
+        ... on SanityDualSectionArray {
+          _key
+          _type
+          dualSymmetric {
+            titleDualS
+            shortText
+            imageSide
+            _rawRichTextDualS
+            backgroundColor {
+              title
+              value
+            }
+            button {
+              nameButton
+              link
+            }
+            youtubeVideo {
+              titulo
+              url
+            }
+            imageDualS {
               asset {
                 _id
               }
@@ -171,21 +144,32 @@ export const query = graphql`
                 y
               }
             }
-            id
-          }
-          ... on SanityTextBlock {
-            _key
-            _type
-            _rawRichText
-            subTitle
-          }
-          ... on SanityYoutube {
-            _key
-            _type
-            titulo
-            url
+            iconObject {
+              imageIcon {
+                asset {
+                  _id
+                }
+              }
+              description
+              label
+              link
+            }
           }
         }
+        ... on SanityTextBlock {
+          _key
+          _type
+          subTitle
+          _rawRichText
+        }
+        ... on SanityYoutube {
+          _key
+          _type
+          url
+          titulo
+        }
+      }
+        
       }
     }
   }
