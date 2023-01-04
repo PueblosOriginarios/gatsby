@@ -76,4 +76,29 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: node.slug.current },
     });
   });
+
+  // CREACION DE PAGINAS DE MATERIALES
+  const { data: materialesQueryData } = await graphql(`
+    query Materiales {
+      allSanityMateriales {
+        nodes {
+          tipoMateriales
+        }
+      }
+    }
+  `);
+
+  if (materialesQueryData.errors) {
+    reporter.panicOnBuild("Error creando paginas de Materiales Didacticos");
+  }
+
+  materialesQueryData.allSanityMateriales.nodes.forEach((node) => {
+    const materialDetail = path.resolve("./src/templates/Materiales.js");
+    createPage({
+      path: node.tipoMateriales + "/materiales/",
+      component: materialDetail,
+      context: { slug: node.tipoMateriales },
+    });
+  });
+
 };
