@@ -76,4 +76,30 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: node.slug.current },
     });
   });
+
+
+
+// CREACION DE PAGINAS DE LENGUAS
+const { data: lenguaQueryData } = await graphql(`
+query Lengua {
+  allSanityLengua {
+    nodes {
+      tipoLengua
+    }
+  }
+}
+`);
+
+if (lenguaQueryData.errors) {
+reporter.panicOnBuild("Error creando paginas de lengua");
+}
+
+lenguaQueryData.allSanityLengua.nodes.forEach((node) => {
+const lenguaDetail = path.resolve("./src/templates/Lengua.js");
+createPage({
+  path: node.tipoLengua + "/lengua/",
+  component: lenguaDetail,
+  context: { slug: node.tipoLengua },
+});
+});
 };
