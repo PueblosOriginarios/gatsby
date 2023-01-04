@@ -19,7 +19,7 @@ export function Seo(props: SeoProps) {
     <Helmet
       htmlAttributes={{ lang: siteMetadata.lang }}
       title={siteMetadata.title}
-      titleTemplate={`%s | Bithouse`}
+      titleTemplate={`%s | Pueblos Originarios`}
       meta={[
         {
           name: `robots`,
