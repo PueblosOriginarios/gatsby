@@ -1,7 +1,7 @@
 {
-  "name": "Bithouse Site",
+  "name": "Pueblos Originarios",
   "version": "1.0.0",
-  "description": "Bithouse site",
+  "description": "Pueblos Originarios",
   "scripts": {
     "clean": "gatsby clean",
     "develop": "gatsby develop",
