@@ -1,0 +1,39 @@
+@import "../globalStyles/global.scss";
+
+.Materiales {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.Materiales .CategoriesContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 1rem 0 0;
+  .Category {
+    @include outlinedButton;
+    height: 40px;
+    width: 140px;
+    margin: 0.5rem;
+  }
+  .Selected {
+    background-color: $light-gray-2;
+  }
+}
+.Materiales .CardsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+@media (min-width: $breakpoint-md) {
+  .Materiales {
+    grid-template-columns: 1fr 760px 1fr;
+  }
+}
+@media (min-width: $breakpoint-lg) {
+  .Materiales {
+    grid-template-columns: 1fr 960px 1fr;
+  }
+}
