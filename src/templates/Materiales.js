@@ -8,95 +8,61 @@ const Materiales = ({ data }) => {
   const categories = data?.allSanityCategories?.nodes;
   const pdfs = data?.allSanityPdf?.nodes;
 
-  const [filteredPdfs, setFilteredPdfs] = useState(pdfs);
-  const [pdfCards, setPdfCards] = useState([]);
+  const handleClick = (e) => {
+    if (e.target.className === "Category Button Selected") {
+      e.target.className = "Category Button";
+      setSelectedCategories(
+        selectedCategories.filter((item) => item !== e.target.name)
+      );
+    } else {
+      e.target.className = "Category Button Selected";
+      setSelectedCategories([...selectedCategories, e.target.name]);
+    }
+  };
+
+  const buttons = categories.map((category) => (
+    <button
+      key={category?._id}
+      className={`Category Button `}
+      onClick={handleClick}
+      name={category?.category}
+    >
+      {category?.category}
+    </button>
+  ));
+
+  const [pdfCards, setPdfCards] = useState(pdfs);
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const [categoriesButtons, setCategoriesButtons] = useState([]);
 
-  const addCategory = (category) => {
-    if (selectedCategories?.includes(category)) {
-      // if the category is already selected, remove it
-      let temp = selectedCategories;
-      temp.splice(temp.indexOf(category), 1);
-      setSelectedCategories(temp);
+  const filterPdfs = useCallback(() => {
+    console.log("filtering");
+    if (selectedCategories.length === 0) {
+      setPdfCards(pdfs);
     } else {
-      setSelectedCategories(selectedCategories.concat(category));
-    }
-  };
-
-  // Filter buttons
-  const updateButtons = useCallback(() => {
-    setCategoriesButtons(
-      categories?.map((category) => {
-        let selected = selectedCategories.includes(category?.category)
-          ? "Selected"
-          : "";
-        return (
-          <button
-            key={category?._id}
-            className={`Category Button ${selected}`}
-            onClick={() => {
-              addCategory(category?.category);
-              updateButtons();
-              updatePdfs();
-            }}
-          >
-            {category?.category}
-          </button>
-        );
-      })
-    );
-  }, [categories, selectedCategories]);
-
-  const updatePdfs = () => {
-    if (0 < selectedCategories.length) {
-      // filter by category and type
-      setFilteredPdfs(
-        pdfs.filter((pdf) => {
-          let isCategory = false;
-          let isType =
-            pdf?.tipoPdf === pageInfo?.tipoMateriales ||
-            pdf?.tipoPdf === "ambos";
-          pdf?.categoryReferences?.map((ref) => {
-            isCategory =
-              isCategory ||
-              selectedCategories?.includes(ref?.categoryReference?.category);
-            return isCategory;
-          });
-          return isCategory && isType;
-        })
-      );
-    } else {
-      setFilteredPdfs(
-        pdfs.filter((pdf) => {
-          let isType =
-            pdf?.tipoPdf === pageInfo?.tipoMateriales ||
-            pdf?.tipoPdf === "ambos";
-          return isType;
+      setPdfCards(
+        pdfs.filter((item) => {
+          return item.categoryReferences.some((elem) =>
+            selectedCategories.includes(elem.categoryReference.category)
+          );
         })
       );
     }
-  };
+  }, [pdfs, selectedCategories]);
 
   useEffect(() => {
-    updateButtons();
-    updatePdfs();
-  }, [selectedCategories, updateButtons, updatePdfs]);
+    console.log("useEffect");
+    filterPdfs();
+  }, [selectedCategories, filterPdfs]);
 
-  // Cards rendered
-  useEffect(() => {
-    const filteredCards = filteredPdfs.map((pdf) => {
-      const pdfSlug = `pdf/${pdf?.slug?.current}`;
-      const cardData = {
-        title: pdf?.title,
-        image: pdf?.image,
-        _rawContent: pdf?._rawShortDescription,
-        slug: pdfSlug,
-      };
-      return <Card data={cardData} key={pdf?._id} />;
-    });
-    setPdfCards(filteredCards);
-  }, [filteredPdfs]);
+  const cards = pdfCards.map((pdf) => {
+    const cardData = {
+      title: pdf?.title,
+      image: pdf?.image,
+      _rawContent: pdf?._rawShortDescription,
+      slug: `pdf/${pdf?.slug?.current}`,
+    };
+    return <Card data={cardData} key={pdf?._id} />;
+  });
 
   return (
     <Page>
@@ -104,8 +70,8 @@ const Materiales = ({ data }) => {
         <div className="empty-left"></div>
         <div>
           <h3>{pageInfo?.title}</h3>
-          <div className="CategoriesContainer">{categoriesButtons}</div>
-          <div className="CardsContainer">{pdfCards}</div>
+          <div className="CategoriesContainer">{buttons}</div>
+          <div className="CardsContainer">{cards}</div>
         </div>
         <div className="empty-right"></div>
       </section>
@@ -123,7 +89,7 @@ export const query = graphql`
         tipoMateriales
       }
     }
-    allSanityPdf {
+    allSanityPdf(filter: { tipoPdf: { in: [$slug, "ambos"] } }) {
       nodes {
         _id
         title
