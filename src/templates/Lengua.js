@@ -6,7 +6,7 @@ import { CustomSection } from "../components/index";
 import "./Lengua.scss";
 
 const LenguaPage = ({ data }) => {
-  console.log(data);
+ 
   const { title, imageHeader } = data?.allSanityLengua?.nodes[0];
 
   const pageInfo = data?.allSanityLengua?.nodes[0];
