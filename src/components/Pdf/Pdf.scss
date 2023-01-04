@@ -6,8 +6,8 @@
   flex-direction: column;
   justify-content: center;
   img {
-    max-width: 280px;
-    margin: 0 1rem;
+    max-width: 320px;
+    margin: 0 1.5rem;
   }
   .Button {
     @include primaryBtn;
@@ -48,6 +48,7 @@
     flex-direction: row;
     img {
       max-width: 450px;
+      margin: 0 1rem;
     }
     .Button {
       margin: 1rem 0;
