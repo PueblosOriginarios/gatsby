@@ -10,7 +10,7 @@ const LenguaPage = ({ data }) => {
   const { title, imageHeader } = data?.allSanityLengua?.nodes[0];
 
   const pageInfo = data?.allSanityLengua?.nodes[0];
-  console.log(pageInfo);
+
 
   return (
     <>
