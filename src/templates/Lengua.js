@@ -13,32 +13,32 @@ const LenguaPage = ({ data }) => {
   return (
     <>
       <Page>
-        <section className='article'>
-          <div className='articleHeader'>
-            <div className='empty-left'></div>
+        <section className="article">
+          <div className="articleHeader">
+            <div className="empty-left"></div>
 
-            <div className='mb-5'>
+            <div className="mb-5">
               {imageHeader && (
                 <SanityImage
                   {...imageHeader}
-                  alt='Image Art'
-                  className='imageHeader'
+                  alt="Image Art"
+                  className="imageHeader"
                 />
               )}
 
-              <div className='titleContent'>
+              <div className="titleContent">
                 <div></div>
                 {title && (
                   <>
-                    <h5 className='title'>{title}</h5>
-                    <div className='vacio'></div>
+                    <h5 className="title">{title}</h5>
+                    <div className="vacio"></div>
                   </>
                 )}
 
                 <div></div>
               </div>
             </div>
-            <div className='empty-right'></div>
+            <div className="empty-right"></div>
           </div>
           <CustomSection sections={pageInfo?.LenguaBuilder} />
         </section>
@@ -164,6 +164,52 @@ export const query = graphql`
             _type
             url
             titulo
+          }
+          ... on SanityDualAsymmetric {
+            id
+            _type
+            title
+            _rawRichTextDualA
+            description
+            imageSide
+            image {
+              crop {
+                _key
+                _type
+                top
+                bottom
+                left
+                right
+              }
+              hotspot {
+                _key
+                _type
+                x
+                y
+                height
+                width
+              }
+              asset {
+                _id
+              }
+            }
+            urlAudio {
+              asset {
+                url
+              }
+            }
+            button {
+              nameButton
+              link
+            }
+            colorLeft {
+              title
+              value
+            }
+            colorRight {
+              title
+              value
+            }
           }
         }
       }
