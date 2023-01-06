@@ -44,7 +44,6 @@ const useHome = () => {
               subtitle {
                 description
                 label
-                link
                 imageIcon {
                   crop {
                     _key
@@ -122,7 +121,6 @@ const useHome = () => {
               iconObject {
                 description
                 label
-                link
                 imageIcon {
                   crop {
                     _key

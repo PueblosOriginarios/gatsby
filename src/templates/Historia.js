@@ -19,32 +19,32 @@ const HistoriaPage = ({ data }) => {
         keywords="Historia, Información, Pueblos, Originarios"
       />
       <Page>
-        <section className="article">
-          <div className="articleHeader">
-            <div className="empty-left"></div>
+        <section className='article'>
+          <div className='articleHeader'>
+            <div className='empty-left'></div>
 
             <div>
               {imageHeader && (
                 <SanityImage
                   {...imageHeader}
-                  alt="Image Art"
-                  className="imageHeader"
+                  alt='Image Art'
+                  className='imageHeader'
                 />
               )}
 
-              <div className="titleContent">
+              <div className='titleContent'>
                 <div></div>
                 {title && (
                   <>
-                    <h5 className="title">{title}</h5>
-                    <div className="vacio"></div>
+                    <h5 className='title'>{title}</h5>
+                    <div className='vacio'></div>
                   </>
                 )}
 
                 <div></div>
               </div>
             </div>
-            <div className="empty-right"></div>
+            <div className='empty-right'></div>
           </div>
           <CustomSection sections={pageInfo?.HistoriaBuilder} />
         </section>
@@ -121,7 +121,6 @@ export const query = graphql`
                   }
                 }
                 label
-                link
                 description
               }
               youtubeVideo {

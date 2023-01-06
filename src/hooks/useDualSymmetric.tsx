@@ -22,7 +22,6 @@ const useDualSymmetric = () => {
               }
               iconObject {
                 label
-                link
                 description
                 imageIcon {
                   crop {

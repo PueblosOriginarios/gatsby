@@ -9,6 +9,7 @@ import { Page } from "./Page/index";
 import Pdf from "./Pdf/Pdf";
 import TextBlock from "./TextBlock/TextBlock";
 import Youtube from "./Youtube/Youtube";
+import CardsNoticias from "./CardsNoticias/CardsNoticias";
 
 export {
   Banner,
@@ -22,4 +23,5 @@ export {
   Pdf,
   TextBlock,
   Youtube,
+  CardsNoticias,
 };
