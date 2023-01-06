@@ -9,7 +9,6 @@ const useBannerDoble = () => {
           subtitle {
             description
             label
-            link
             imageIcon {
               crop {
                 _key

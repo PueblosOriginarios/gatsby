@@ -8,7 +8,6 @@ import {
 } from "../";
 
 const CustomSection = ({ sections }) => {
-  console.log(sections);
   const sectionResult = sections?.map((section, index) => {
     return (
       <>

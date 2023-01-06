@@ -87,7 +87,6 @@ export const query = graphql`
               }
               iconObject {
                 label
-                link
                 description
                 imageIcon {
                   asset {

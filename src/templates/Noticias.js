@@ -1,49 +1,40 @@
 import React from "react";
-import { CardsVisitantes, Page } from "../components/index";
+import { Page } from "../components/index";
 import { graphql } from "gatsby";
-import SanityImage from "gatsby-plugin-sanity-image";
-import { CustomSection } from "../components/index";
-import useArticle from "../hooks/useArticle";
 import "./Noticias.scss";
+import CardsNoticias from "../components/CardsNoticias/CardsNoticias";
+import CardEvento from "../components/CardEventos/CardsEventos";
 
 const NoticiasPage = ({ data }) => {
   const { title } = data?.allSanityNoticias?.nodes[0];
 
-  const pageInfo = data?.allSanityNoticias?.nodes[0];
+  const infoEventos = data?.allSanityEventos?.nodes;
+  const dataArticle = data?.allSanityArticle?.nodes;
 
-  const dataArticle = useArticle().allSanityArticle?.nodes;
-  console.log(dataArticle);
-  console.log(pageInfo);
   return (
     <>
       <Page>
-        <section className='article'>
-          <div className='articleHeader'>
+        <section className='articleNoticia'>
+          <div className='articleNoticiaHeader'>
             <div className='empty-left'></div>
 
-            <div className='mb-5'>
-              <div className='titleContent'>
-                <div></div>
-                {title && (
-                  <>
-                    <h5 className='title'>{title}</h5>
-                    <div className='vacio'></div>
-                  </>
-                )}
+            <div className='titleContent'>
+              <div></div>
+              {title && (
+                <>
+                  <h5 className='title'>{title}</h5>
+                  <div className='vacio'></div>
+                </>
+              )}
 
-                <div></div>
-              </div>
-              <div>
-                {dataArticle?.tipoArticuloNoticia ===
-                  pageInfo?.tipoNoticias && (
-                  <CardsVisitantes data={dataArticle} />
-                )}
-              </div>
+              <div></div>
             </div>
-            <div className='empty-right'></div>
           </div>
-          <CardsVisitantes data={dataArticle} />
-          <CustomSection sections={pageInfo?.noticiasBuilder} />
+          <div className='empty-right'></div>
+
+          {infoEventos && <CardEvento data={infoEventos} />}
+
+          <CardsNoticias data={dataArticle} />
         </section>
       </Page>
     </>
@@ -58,18 +49,68 @@ export const query = graphql`
       nodes {
         title
         tipoNoticias
-        subTitle
-        noticiasBuilder {
-          ... on SanityBooleanNoticias {
-            _key
-            _type
-            articuloNoticias
+      }
+    }
+    allSanityEventos(filter: { tipoEventos: { eq: $slug } }) {
+      nodes {
+        _rawContenidoEvento
+        title
+        tipoEventos
+        shortText
+        iconEvento {
+          label
+          description
+          imageIcon {
+            asset {
+              _id
+            }
+            crop {
+              _key
+              bottom
+              _type
+              left
+              right
+              top
+            }
+            hotspot {
+              _key
+              _type
+              height
+              width
+              x
+              y
+            }
           }
-          ... on SanityTextBlock {
+        }
+      }
+    }
+    allSanityArticle(filter: { tipoArticuloNoticia: { eq: $slug } }) {
+      nodes {
+        title
+        tipoArticuloNoticia
+        slug {
+          current
+        }
+        _rawRichText
+        imageHeader {
+          crop {
             _key
             _type
-            subTitle
-            _rawRichText
+            bottom
+            left
+            right
+            top
+          }
+          asset {
+            _id
+          }
+          hotspot {
+            _key
+            _type
+            height
+            width
+            x
+            y
           }
         }
       }

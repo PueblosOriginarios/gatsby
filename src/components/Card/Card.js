@@ -7,11 +7,11 @@ import { Link } from "gatsby";
 import "./Card.scss";
 
 const Card = ({
-  data: { title, slug, link, _rawContent, image, artists },
+  data: { title, slug, link, _rawContent, image, artists, shortText },
   wide,
 }) => {
   const icon = artists?.imageIcon;
-  const isMobile = useMediaQuery({ query: "(max-width: 576px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 176px)" });
   const showArtists = artists !== undefined && !isMobile;
   const wideCard = wide ? "wide" : "";
 
@@ -26,6 +26,11 @@ const Card = ({
       {_rawContent && (
         <div className='Content'>
           <PortableText value={_rawContent} />
+        </div>
+      )}
+      {shortText && (
+        <div className='mt-3 shortText'>
+          <h6>{shortText}</h6>
         </div>
       )}
       {showArtists && (
@@ -44,6 +49,7 @@ const Card = ({
           <div className='Artists'>{artists?.description}</div>
         </div>
       )}
+
       {slug ? (
         <Link to={`../${slug}`} className='Link'>
           <small>Ver más</small>
