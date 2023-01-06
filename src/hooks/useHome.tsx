@@ -198,6 +198,11 @@ const useHome = () => {
                   _id
                 }
               }
+              urlAudio {
+                asset {
+                  url
+                }
+              }
               button {
                 nameButton
                 link

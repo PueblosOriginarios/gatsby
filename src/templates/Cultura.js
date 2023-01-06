@@ -189,6 +189,52 @@ export const query = graphql`
             titulo
             url
           }
+          ... on SanityDualAsymmetric {
+            id
+            _type
+            title
+            _rawRichTextDualA
+            description
+            imageSide
+            image {
+              crop {
+                _key
+                _type
+                top
+                bottom
+                left
+                right
+              }
+              hotspot {
+                _key
+                _type
+                x
+                y
+                height
+                width
+              }
+              asset {
+                _id
+              }
+            }
+            urlAudio {
+              asset {
+                url
+              }
+            }
+            button {
+              nameButton
+              link
+            }
+            colorLeft {
+              title
+              value
+            }
+            colorRight {
+              title
+              value
+            }
+          }
         }
       }
     }
