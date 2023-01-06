@@ -56,6 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
     query PDF {
       allSanityPdf {
         nodes {
+          tipoPdf
           slug {
             current
           }
@@ -70,11 +71,24 @@ exports.createPages = async ({ graphql, actions }) => {
 
   pdfQueryData.allSanityPdf.nodes.forEach((node) => {
     const pdfDetail = path.resolve("./src/templates/PdfPage.js");
-    createPage({
-      path: "/pdf/" + node.slug.current,
-      component: pdfDetail,
-      context: { slug: node.slug.current },
-    });
+    if (node?.tipoPdf === "ambos") {
+      createPage({
+        path: "guarani/pdf/" + node.slug.current,
+        component: pdfDetail,
+        context: { slug: node.slug.current },
+      });
+      createPage({
+        path: "chane/pdf/" + node.slug.current,
+        component: pdfDetail,
+        context: { slug: node.slug.current },
+      });
+    } else {
+      createPage({
+        path: node?.tipoPdf + "/pdf/" + node.slug.current,
+        component: pdfDetail,
+        context: { slug: node.slug.current },
+      });
+    }
   });
 
   // CREACION DE PAGINA DE NOTICIAS
