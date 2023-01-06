@@ -6,11 +6,9 @@ import { CustomSection } from "../components/index";
 import "./Lengua.scss";
 
 const LenguaPage = ({ data }) => {
- 
   const { title, imageHeader } = data?.allSanityLengua?.nodes[0];
 
   const pageInfo = data?.allSanityLengua?.nodes[0];
-
 
   return (
     <>
@@ -56,31 +54,31 @@ export const query = graphql`
     allSanityLengua(filter: { tipoLengua: { eq: $slug } }) {
       nodes {
         title
-      tipoLengua
-      imageHeader {
-        asset {
-          _id
+        tipoLengua
+        imageHeader {
+          asset {
+            _id
+          }
+          crop {
+            _key
+            _type
+            bottom
+            left
+            right
+            top
+          }
+          hotspot {
+            _key
+            _type
+            height
+            width
+            x
+            y
+          }
         }
-        crop {
-          _key
-          _type
-          bottom
-          left
-          right
-          top
-        }
-        hotspot {
-          _key
-          _type
-          height
-          width
-          x
-          y
-        }
-      }
-      LenguaBuilder {
-        ... on SanityCarousel {
-          title
+        LenguaBuilder {
+          ... on SanityCarousel {
+            title
             images {
               asset {
                 _id
@@ -102,74 +100,72 @@ export const query = graphql`
                 right
               }
             }
-        }
-        ... on SanityDualSectionArray {
-          _key
-          _type
-          dualSymmetric {
-            titleDualS
-            shortText
-            imageSide
-            _rawRichTextDualS
-            backgroundColor {
-              title
-              value
-            }
-            button {
-              nameButton
-              link
-            }
-            youtubeVideo {
-              titulo
-              url
-            }
-            imageDualS {
-              asset {
-                _id
+          }
+          ... on SanityDualSectionArray {
+            _key
+            _type
+            dualSymmetric {
+              titleDualS
+              shortText
+              imageSide
+              _rawRichTextDualS
+              backgroundColor {
+                title
+                value
               }
-              crop {
-                _key
-                _type
-                bottom
-                left
-                right
-                top
+              button {
+                nameButton
+                link
               }
-              hotspot {
-                _key
-                _type
-                height
-                width
-                x
-                y
+              youtubeVideo {
+                titulo
+                url
               }
-            }
-            iconObject {
-              imageIcon {
+              imageDualS {
                 asset {
                   _id
                 }
+                crop {
+                  _key
+                  _type
+                  bottom
+                  left
+                  right
+                  top
+                }
+                hotspot {
+                  _key
+                  _type
+                  height
+                  width
+                  x
+                  y
+                }
               }
-              description
-              label
-              link
+              iconObject {
+                imageIcon {
+                  asset {
+                    _id
+                  }
+                }
+                description
+                label
+              }
             }
           }
+          ... on SanityTextBlock {
+            _key
+            _type
+            subTitle
+            _rawRichText
+          }
+          ... on SanityYoutube {
+            _key
+            _type
+            url
+            titulo
+          }
         }
-        ... on SanityTextBlock {
-          _key
-          _type
-          subTitle
-          _rawRichText
-        }
-        ... on SanityYoutube {
-          _key
-          _type
-          url
-          titulo
-        }
-      }
-        
       }
     }
   }

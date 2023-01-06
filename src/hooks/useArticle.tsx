@@ -6,6 +6,8 @@ const useArticle = () => {
       allSanityArticle {
         nodes {
           title
+          _rawRichText
+          tipoArticuloNoticia
           slug {
             current
           }
@@ -30,35 +32,7 @@ const useArticle = () => {
               y
             }
           }
-          articleCard {
-            _rawContent
-            artists {
-              link
-              label
-              description
-              imageIcon {
-                asset {
-                  _id
-                }
-                crop {
-                  _type
-                  _key
-                  bottom
-                  left
-                  right
-                  top
-                }
-                hotspot {
-                  _key
-                  _type
-                  width
-                  height
-                  x
-                  y
-                }
-              }
-            }
-          }
+          
         }
       }
     }

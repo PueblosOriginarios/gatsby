@@ -1,0 +1,119 @@
+import React from "react";
+import { Page } from "../components/index";
+import { graphql } from "gatsby";
+import "./Noticias.scss";
+import CardsNoticias from "../components/CardsNoticias/CardsNoticias";
+import CardEvento from "../components/CardEventos/CardsEventos";
+
+const NoticiasPage = ({ data }) => {
+  const { title } = data?.allSanityNoticias?.nodes[0];
+
+  const infoEventos = data?.allSanityEventos?.nodes;
+  const dataArticle = data?.allSanityArticle?.nodes;
+
+  return (
+    <>
+      <Page>
+        <section className='articleNoticia'>
+          <div className='articleNoticiaHeader'>
+            <div className='empty-left'></div>
+
+            <div className='titleContent'>
+              <div></div>
+              {title && (
+                <>
+                  <h5 className='title'>{title}</h5>
+                  <div className='vacio'></div>
+                </>
+              )}
+
+              <div></div>
+            </div>
+          </div>
+          <div className='empty-right'></div>
+
+          {infoEventos && <CardEvento data={infoEventos} />}
+
+          <CardsNoticias data={dataArticle} />
+        </section>
+      </Page>
+    </>
+  );
+};
+
+export default NoticiasPage;
+
+export const query = graphql`
+  query($slug: String!) {
+    allSanityNoticias(filter: { tipoNoticias: { eq: $slug } }) {
+      nodes {
+        title
+        tipoNoticias
+      }
+    }
+    allSanityEventos(filter: { tipoEventos: { eq: $slug } }) {
+      nodes {
+        _rawContenidoEvento
+        title
+        tipoEventos
+        shortText
+        iconEvento {
+          label
+          description
+          imageIcon {
+            asset {
+              _id
+            }
+            crop {
+              _key
+              bottom
+              _type
+              left
+              right
+              top
+            }
+            hotspot {
+              _key
+              _type
+              height
+              width
+              x
+              y
+            }
+          }
+        }
+      }
+    }
+    allSanityArticle(filter: { tipoArticuloNoticia: { eq: $slug } }) {
+      nodes {
+        title
+        tipoArticuloNoticia
+        slug {
+          current
+        }
+        _rawRichText
+        imageHeader {
+          crop {
+            _key
+            _type
+            bottom
+            left
+            right
+            top
+          }
+          asset {
+            _id
+          }
+          hotspot {
+            _key
+            _type
+            height
+            width
+            x
+            y
+          }
+        }
+      }
+    }
+  }
+`;
