@@ -36,15 +36,13 @@ const Card = ({
       {showArtists && (
         <div className='ArtistsContainer'>
           <div className='Profile'>
-            <a href={artists?.link} rel='noopener noreferrer' target='_blank'>
-              <SanityImage
-                {...icon}
-                alt='Icon Image'
-                loading='eager'
-                className='Icon'
-              />
-              <p className='body-small fw-bolder'>{artists?.label}</p>
-            </a>
+            <SanityImage
+              {...icon}
+              alt='Icon Image'
+              loading='eager'
+              className='Icon'
+            />
+            <p className='body-small fw-bolder'>{artists?.label}</p>
           </div>
           <div className='Artists'>{artists?.description}</div>
         </div>
