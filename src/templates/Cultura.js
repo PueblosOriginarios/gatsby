@@ -1,5 +1,6 @@
 import React from "react";
 import { Page } from "../components/index";
+import { Seo } from "../components/seo";
 import { graphql } from "gatsby";
 import SanityImage from "gatsby-plugin-sanity-image";
 import { CustomSection } from "../components/index";
@@ -12,6 +13,11 @@ const CulturaPage = ({ data }) => {
 
   return (
     <>
+      <Seo
+        title="Cultura"
+        description="Página con información de la cultural del pueblo originario"
+        keywords="Cultura, Información, Pueblos, Originarios"
+      />
       <Page>
         <section className='article'>
           <div className='articleHeader'>

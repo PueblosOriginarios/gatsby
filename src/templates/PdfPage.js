@@ -1,5 +1,6 @@
 import React from "react";
 import { Page, Pdf } from "../components/index";
+import { Seo } from "../components/seo";
 import { graphql } from "gatsby";
 import { PortableText } from "@portabletext/react";
 import "./PdfPage.scss";
@@ -9,6 +10,11 @@ const PdfPage = ({ data }) => {
 
   return (
     <>
+      <Seo
+        title="PDF"
+        description="Página con material didáctico en formato PDF y una descripción"
+        keywords="PDF, Material, Articulo"
+      />
       <Page>
         <section className="PdfArticle">
           <div className="empty-left"></div>
@@ -38,6 +44,7 @@ export const query = graphql`
   query($slug: String!) {
     allSanityPdf(filter: { slug: { current: { eq: $slug } } }) {
       nodes {
+        _id
         categoryReferences {
           categoryReference {
             category
@@ -48,6 +55,7 @@ export const query = graphql`
         slug {
           current
         }
+        tipoPdf
         image {
           crop {
             _key

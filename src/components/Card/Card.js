@@ -51,7 +51,7 @@ const Card = ({
       )}
 
       {slug ? (
-        <Link to={`../${slug}`} className='Link'>
+        <Link to={`/${slug}`} className='Link'>
           <small>Ver más</small>
         </Link>
       ) : (

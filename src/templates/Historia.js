@@ -1,5 +1,6 @@
 import React from "react";
 import { Page } from "../components/index";
+import { Seo } from "../components/seo";
 import { graphql } from "gatsby";
 import SanityImage from "gatsby-plugin-sanity-image";
 import { CustomSection } from "../components/index";
@@ -12,6 +13,11 @@ const HistoriaPage = ({ data }) => {
 
   return (
     <>
+      <Seo
+        title="Historia"
+        description="Página con información de la historia del pueblo originario"
+        keywords="Historia, Información, Pueblos, Originarios"
+      />
       <Page>
         <section className='article'>
           <div className='articleHeader'>
