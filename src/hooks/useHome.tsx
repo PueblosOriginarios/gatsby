@@ -6,6 +6,12 @@ const useHome = () => {
       allSanityHome {
         nodes {
           HomeBuilder {
+            ... on SanityTextBlock {
+              _key
+              _type
+              subTitle
+              _rawRichText
+            }
             ... on SanityBanner {
               id
               _type

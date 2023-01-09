@@ -69,6 +69,52 @@ export const query = graphql`
     allSanityArticle(filter: { slug: { current: { eq: $slug } } }) {
       nodes {
         ArticleBuilder {
+          ... on SanityDualAsymmetric {
+            id
+            _type
+            imageSide
+            description
+            title
+            urlAudio {
+              asset {
+                url
+              }
+            }
+            _rawRichTextDualA
+            button {
+              link
+              nameButton
+            }
+            colorLeft {
+              title
+              value
+            }
+            colorRight {
+              title
+              value
+            }
+            image {
+              asset {
+                _id
+              }
+              crop {
+                _key
+                _type
+                bottom
+                left
+                right
+                top
+              }
+              hotspot {
+                _key
+                _type
+                height
+                width
+                x
+                y
+              }
+            }
+          }
           ... on SanityDualSectionArray {
             _key
             _type
