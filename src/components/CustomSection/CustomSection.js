@@ -15,11 +15,7 @@ const CustomSection = ({ sections }) => {
         {section?._type !== null &&
         section?._type !== undefined &&
         section?._type === "textBlock" ? (
-          <TextBlock
-            key={index}
-            subTitle={section?.subTitle}
-            richText={section?._rawRichText}
-          />
+          <TextBlock key={index} data={section} />
         ) : null}
 
         {section?._type !== null &&
@@ -29,7 +25,7 @@ const CustomSection = ({ sections }) => {
         ) : null}
 
         {section?.images !== null && section?.images !== undefined ? (
-          <div className="my-3">
+          <div className='my-3'>
             <CarouselImages key={index} data={section} />
           </div>
         ) : null}

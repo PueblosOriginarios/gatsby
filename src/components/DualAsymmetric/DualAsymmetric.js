@@ -30,12 +30,10 @@ const DualAsymmetric = ({
 
   const altText = description === null ? "Banner Dual Asimetric" : description;
 
-  console.log(urlAudio)
-
   return (
     <div className={`DualAsymmetric ${imageSide}`}>
       <div
-        className="emptyLeft"
+        className='emptyLeft'
         style={{ backgroundColor: bgColorImage }}
       ></div>
       {image && (
@@ -52,17 +50,17 @@ const DualAsymmetric = ({
       >
         {(title || _rawRichTextDualA) && (
           <>
-            <h4 className="Title" style={{ color: textColor }}>
+            <h4 className='Title' style={{ color: textColor }}>
               {title}
             </h4>
-            <PortableText value={_rawRichTextDualA} className="Content" />
+            <PortableText value={_rawRichTextDualA} className='Content' />
           </>
         )}
         <div className={`ButtonAudioContainer`}>
           {button?.link && (
             <a
               href={button?.link}
-              rel="noreferrer"
+              rel='noreferrer'
               className={`Button ${buttonColor} ${bgColorText}`}
             >
               <small>{button?.nameButton}</small>
