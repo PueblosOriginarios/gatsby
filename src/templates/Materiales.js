@@ -8,6 +8,7 @@ const Materiales = ({ data }) => {
   const pageInfo = data?.allSanityMateriales?.nodes[0];
   const categories = data?.allSanityCategories?.nodes;
   const pdfs = data?.allSanityPdf?.nodes;
+  const title = pageInfo?.title;
 
   const handleClick = (e) => {
     if (e.target.className === "Category Button Selected") {
@@ -71,14 +72,30 @@ const Materiales = ({ data }) => {
         keywords="Historia, Información, Pueblos, Originarios"
       />
       <Page>
-        <section className="Materiales">
-          <div className="empty-left"></div>
-          <div>
-            <h3>{pageInfo?.title}</h3>
-            <div className="CategoriesContainer">{buttons}</div>
-            <div className="CardsContainer">{cards}</div>
+        <section className="MaterialesSection">
+          <div className="Header">
+            <div className="empty-left"></div>
+            <div className="titleContent">
+              <div></div>
+              {title && (
+                <>
+                  <h5 className="title">{title}</h5>
+                  <div className="vacio"></div>
+                </>
+              )}
+              <div></div>
+            </div>
+            <div className="empty-right"></div>
           </div>
-          <div className="empty-right"></div>
+
+          <div className="Materiales">
+            <div className="empty-left"></div>
+            <div>
+              <div className="CategoriesContainer">{buttons}</div>
+              <div className="CardsContainer">{cards}</div>
+            </div>
+            <div className="empty-right"></div>
+          </div>
         </section>
       </Page>
     </>
