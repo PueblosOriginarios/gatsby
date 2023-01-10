@@ -6,10 +6,20 @@
   padding: 16px;
   background-color: $bg-white;
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
+  .shortText{
+    h6{
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
   .Link {
     color: $dark-green;
     padding-top: 24px;
+
     a,
     small {
       &:hover {
@@ -17,15 +27,17 @@
       }
     }
   }
+
   .Title {
     padding-top: 1rem;
-    display: -webkit-box;
+    display: block;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     line-clamp: 1;
     text-overflow: ellipsis;
     overflow: hidden;
   }
+
   .Content {
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -33,6 +45,7 @@
     line-clamp: 4;
     text-overflow: ellipsis;
     overflow: hidden;
+
     p {
       // body-medium
       font-size: $xxxxs !important;
@@ -40,11 +53,13 @@
       line-height: 20px;
     }
   }
+
   .ImageContainer {
     width: 100%;
     height: 235px;
     object-fit: cover;
   }
+
   .ArtistsContainer {
     display: flex;
     flex-direction: row;
@@ -64,18 +79,21 @@
       max-width: 30%;
       margin-top: 1rem;
       color: $dark-green;
+
       a {
         color: $dark-green;
       }
+
       .Icon {
         max-width: 40px;
       }
     }
+
     .Artists {
       padding-left: 16px;
       font-weight: 200;
       font-size: 14px;
-      display: -webkit-box;
+      display: block;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       line-clamp: 2;
@@ -88,6 +106,7 @@
 @media screen and (min-width: $breakpoint-sm) {
   .Card {
     width: 420px;
+
     &.wide {
       .ImageContainer {
         object-fit: cover;
@@ -99,8 +118,10 @@
 @media screen and (min-width: $breakpoint-md) {
   .Card {
     width: 240px;
+
     &.wide {
       width: 282px;
+
       .ImageContainer {
         width: 100%;
         height: auto;

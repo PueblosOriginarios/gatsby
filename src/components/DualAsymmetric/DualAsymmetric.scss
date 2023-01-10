@@ -20,6 +20,17 @@
   flex-direction: column;
   justify-content: center;
   padding: 1.5rem 1.5rem 3rem 1.5rem;
+
+  .ButtonAudioContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    audio {
+      margin: 0.5rem 0;
+      max-width: 270px;
+    }
+  }
 }
 
 .DualAsymmetric .Title {
@@ -35,6 +46,22 @@
   }
   &.alternative {
     @include secondaryBtn;
+  }
+}
+
+@media (min-width: $breakpoint-sm) {
+  .DualAsymmetric .TextContainer {
+    .ButtonAudioContainer {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      a {
+        margin-right: 1rem;
+      }
+      audio {
+        max-width: none;
+      }
+    }
   }
 }
 
@@ -79,8 +106,8 @@
 @media (min-width: $breakpoint-lg) {
   .DualAsymmetric {
     grid-template-columns:
-    1fr var(--left-column-width, 320px) var(--right-column-width, 640px)
-    1fr;
+      1fr var(--left-column-width, 320px) var(--right-column-width, 640px)
+      1fr;
     &.right {
       grid-template-columns:
         1fr var(--left-column-width, 640px) var(--right-column-width, 320px)
@@ -91,9 +118,13 @@
     }
     .TextContainer {
       padding: 5rem 0 5rem 2.5rem;
+      .ButtonAudioContainer {
+        a {
+          margin-right: 1.5rem;
+        }
+      }
     }
   }
-
 }
 
 @media (min-width: $breakpoint-xl) {
@@ -102,16 +133,16 @@
     grid-template-columns:
       1fr var(--left-column-width, 370px) var(--right-column-width, 740px)
       1fr;
-      &.right {
-        grid-template-columns:
-          1fr var(--left-column-width, 740px) var(--right-column-width, 370px)
-          1fr;
+    &.right {
+      grid-template-columns:
+        1fr var(--left-column-width, 740px) var(--right-column-width, 370px)
+        1fr;
+    }
+    .ImageContainer {
+      img {
+        max-width: 320px !important;
       }
-      .ImageContainer {
-        img {
-          max-width: 320px !important;
-        }
-      }
+    }
   }
   .DualAsymmetric .TextContainer {
     p,
@@ -127,11 +158,11 @@
     grid-template-columns:
       1fr var(--left-column-width, 420px) var(--right-column-width, 840px)
       1fr;
-      &.right {
-        grid-template-columns:
-          1fr var(--left-column-width, 840px) var(--right-column-width, 420px)
-          1fr;
-      }
+    &.right {
+      grid-template-columns:
+        1fr var(--left-column-width, 840px) var(--right-column-width, 420px)
+        1fr;
+    }
   }
 }
 
@@ -141,11 +172,11 @@
     grid-template-columns:
       1fr var(--left-column-width, 470px) var(--right-column-width, 940px)
       1fr;
-      &.right {
-        grid-template-columns:
-          1fr var(--left-column-width, 940px) var(--right-column-width, 470px)
-          1fr;
-      }
+    &.right {
+      grid-template-columns:
+        1fr var(--left-column-width, 940px) var(--right-column-width, 470px)
+        1fr;
+    }
   }
 }
 
@@ -155,10 +186,10 @@
     grid-template-columns:
       1fr var(--left-column-width, 520px) var(--right-column-width, 1040px)
       1fr;
-      &.right {
-        grid-template-columns:
-          1fr var(--left-column-width, 1040px) var(--right-column-width, 520px)
-          1fr;
-      }
+    &.right {
+      grid-template-columns:
+        1fr var(--left-column-width, 1040px) var(--right-column-width, 520px)
+        1fr;
+    }
   }
 }

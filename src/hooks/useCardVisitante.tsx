@@ -31,35 +31,7 @@ const useCardVisitante = () => {
           slug {
             current
           }
-          articleCard {
-            _rawContent
-            artists {
-              label
-              link
-              imageIcon {
-                asset {
-                    _id
-                }
-                hotspot {
-                    _key
-                    _type
-                    height
-                    width
-                    y
-                    x
-                }
-                crop {
-                    _key
-                    _type
-                    bottom
-                    left
-                    right
-                    top
-                }
-              }
-              description
-            }
-          }
+          
         }
       }
     }
