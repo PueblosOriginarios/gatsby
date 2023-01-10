@@ -2,7 +2,7 @@
 
 .textContainer {
   grid-template-columns: 1fr;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
 }
 
 @media (min-width: $breakpoint-md) {
@@ -30,7 +30,6 @@
     grid-template-columns:
       1fr var(--middle-column-width, 1110px)
       1fr;
-    margin-bottom: 3rem;
   }
 }
 

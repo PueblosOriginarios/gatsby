@@ -5,7 +5,8 @@ import {
   BannerDoble,
   CarouselImages,
   Youtube,
-} from "../";
+  DualAsymmetric,
+} from "../index";
 
 const CustomSection = ({ sections }) => {
   const sectionResult = sections?.map((section, index) => {
@@ -14,11 +15,7 @@ const CustomSection = ({ sections }) => {
         {section?._type !== null &&
         section?._type !== undefined &&
         section?._type === "textBlock" ? (
-          <TextBlock
-            key={index}
-            subTitle={section?.subTitle}
-            richText={section?._rawRichText}
-          />
+          <TextBlock key={index} data={section} />
         ) : null}
 
         {section?._type !== null &&
@@ -49,6 +46,12 @@ const CustomSection = ({ sections }) => {
             titulo={section?.titulo}
             videoUrl={section?.url}
           />
+        ) : null}
+
+        {section?._type !== null &&
+        section?._type !== undefined &&
+        section?._type === "dualAsymmetric" ? (
+          <DualAsymmetric key={index} data={section} />
         ) : null}
       </>
     );
