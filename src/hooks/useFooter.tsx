@@ -5,8 +5,6 @@ const useFooter = () => {
     {
       allSanityFooter {
         nodes {
-          address
-          phone
           email
         }
       }
