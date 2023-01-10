@@ -1,6 +1,4 @@
 import React from "react"
-import Location from "./Location/Location"
-import Phone from "./Phone/Phone"
 import Email from "./Email/Email"
 import "./style.scss"
 
@@ -12,8 +10,6 @@ export function Footer(): React.ReactElement {
           <h5 className="Title headline-small">Contactanos</h5>
           <div className="Contactos">
             <Email />
-            <Phone />
-            <Location />
           </div>
         </div>
       </div>
