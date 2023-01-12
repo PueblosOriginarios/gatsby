@@ -1,7 +1,7 @@
 @import "../globalStyles/global.scss";
 
-.article {
-  .articleHeader {
+.bibliografia {
+  .bibliografiaHeader {
     display: grid;
     grid-template-columns: 1fr;
 
@@ -34,8 +34,8 @@
 }
 
 @media (min-width: $breakpoint-md) {
-  .article {
-    .articleHeader {
+  .bibliografia {
+    .bibliografiaHeader {
       .title {
         padding: 1rem 2.5rem 1rem 0;
       }
@@ -48,8 +48,8 @@
 }
 
 @media (min-width: $breakpoint-lg) {
-  .article {
-    .articleHeader {
+  .bibliografia {
+    .bibliografiaHeader {
       .titleContent {
         grid-template-columns: 1fr 960px 1fr;
       }
@@ -58,8 +58,8 @@
 }
 
 @media (min-width: $breakpoint-xl) {
-  .article {
-    .articleHeader {
+  .bibliografia {
+    .bibliografiaHeader {
       .titleContent{
         grid-template-columns: 1fr 1110px 1fr;
 
@@ -76,8 +76,8 @@
 
 
 @media (min-width: $breakpoint-xxl) {
-  .article {
-    .articleHeader {
+  .bibliografia {
+    .bibliografiaHeader {
       .titleContent {
         grid-template-columns: 1fr 1260px 1fr;
       }
@@ -86,8 +86,8 @@
 }
 
 @media (min-width: $breakpoint-xxxl) {
-  .article {
-    .articleHeader {
+  .bibliografia {
+    .bibliografiaHeader {
       .titleContent {
         grid-template-columns: 1fr 1410px 1fr;
       }
@@ -97,8 +97,8 @@
 }
 
 @media (min-width: $breakpoint-xxxxl) {
-  .article {
-    .articleHeader {
+  .bibliografia {
+    .bibliografiaHeader {
       .titleContent {
         grid-template-columns: 1fr 1560px 1fr;
       }
