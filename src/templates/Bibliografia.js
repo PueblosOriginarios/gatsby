@@ -6,26 +6,26 @@ import { PortableText } from "@portabletext/react";
 import Pdf from  "../components/Pdf/Pdf";
 
 const Bibliografia = ({ data }) => {
-    const { title, bibliografia } = data?.allSanityBibliografia?.nodes[0];
-
-
+    const { title } = data?.allSanityBibliografia?.nodes[0];
+    const  bibliografia = data?.allSanityComponentbibliografia?.nodes;
+  
 
     bibliografia.sort(function (a, b) {
         if (a.author.toLowerCase() > b.author.toLowerCase()) {
             return 1;
         }
         if (a.author.toLowerCase() < b.author.toLowerCase()) {
-            return -1;
+          return -1;
         }
         return 0;
     });
-
+    
 
     return (
       
           <>
       <Page>
-        <section className='bibliografia'>
+        { <section className='bibliografia'>
           <div className='bibliografiaHeader'>
             <div className='empty-left'></div>
 
@@ -48,7 +48,7 @@ const Bibliografia = ({ data }) => {
             <Pdf data={item?.referenceBibliografia} />
           </div>
         ))}
-        </section>
+        </section>}
       </Page>
     </>
     );
@@ -62,22 +62,22 @@ const Bibliografia = ({ data }) => {
     allSanityBibliografia(filter: { tipoBibliografia: { eq: $slug } }) {
       nodes {
         title
-        bibliografia {
-          title
-          author
-          _rawRichTextBody
-          categoryReferenceBibliografia {
-            categoryReference {
-              category
-            }
-          }
-          referenceBibliografia {
-            tipoPdf
-            link
-          }
-        }
         tipoBibliografia
       }
     }
+
+    allSanityComponentbibliografia(filter: { filtroBilbliografia:{  in: [$slug, "ambos"]  } }) {
+      nodes {
+        author
+        title
+        _rawRichTextBody
+        filtroBilbliografia
+        referenceBibliografia {
+          link
+          tipoPdf
+          }
+        }
+    }
+
   }
 `;
