@@ -5,17 +5,11 @@
     display: grid;
     grid-template-columns: 1fr;
 
-    img {
-      height: 30vh;
-      width: 100%;
-      object-fit: cover;
-    }
-    
-    .titleContent{
+    .titleContent {
       background: $light-green-2;
       color: $bg-white;
     }
-    .title {      
+    .title {
       padding: 1rem 1.5rem 0 1.5rem;
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -24,11 +18,27 @@
       text-overflow: ellipsis;
       overflow: hidden;
       margin-bottom: 0px;
-      border-bottom: 1px solid  $light-green-2;
+      border-bottom: 1px solid $light-green-2;
     }
     .vacio {
-      background:  $light-green-2;
+      background: $light-green-2;
       height: 1rem;
+    }
+  }
+
+  .contentBibliografia {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .textBibliografia {
+      padding: 1.5rem;
+    }
+
+    .line {
+      border-top: 1.5px solid $light-green-2;
+      height: 2px;
+      max-width: 100%;
+      margin: 0 auto;
     }
   }
 }
@@ -44,6 +54,12 @@
         grid-template-columns: 1fr 700px 1fr;
       }
     }
+    .contentBibliografia {
+      .textBibliografia {
+        display: grid;
+        grid-template-columns: 1fr 700px 1fr;
+      }
+    }
   }
 }
 
@@ -54,26 +70,38 @@
         grid-template-columns: 1fr 960px 1fr;
       }
     }
+    .contentBibliografia {
+      .textBibliografia{
+        display: grid;
+        grid-template-columns: 1fr 960px 1fr;
+      }
+
+      .textBibliografia {
+        padding: 1.5rem 0;
+      }
+    }
   }
 }
 
 @media (min-width: $breakpoint-xl) {
   .bibliografia {
     .bibliografiaHeader {
-      .titleContent{
+      .titleContent {
         grid-template-columns: 1fr 1110px 1fr;
 
         .title {
           padding: 1rem 0;
         }
       }
-      img {
-        height: 40vh;
+    }
+    .contentBibliografia {
+      .textBibliografia{
+        display: grid;
+        grid-template-columns: 1fr 1110px 1fr;
       }
     }
   }
 }
-
 
 @media (min-width: $breakpoint-xxl) {
   .bibliografia {
@@ -82,6 +110,13 @@
         grid-template-columns: 1fr 1260px 1fr;
       }
     }
+    .contentBibliografia {
+      .textBibliografia{
+        display: grid;
+        grid-template-columns: 1fr 1260px 1fr;
+      }
+      
+    }
   }
 }
 
@@ -89,6 +124,12 @@
   .bibliografia {
     .bibliografiaHeader {
       .titleContent {
+        grid-template-columns: 1fr 1410px 1fr;
+      }
+    }
+    .contentBibliografia {
+      .textBibliografia{
+        display: grid;
         grid-template-columns: 1fr 1410px 1fr;
       }
       
@@ -102,6 +143,12 @@
       .titleContent {
         grid-template-columns: 1fr 1560px 1fr;
       }
+    }
+    .contentBibliografia {
+      .textBibliografia{
+        display: grid;
+        grid-template-columns: 1fr 1560px 1fr;
+      }      
     }
   }
 }
