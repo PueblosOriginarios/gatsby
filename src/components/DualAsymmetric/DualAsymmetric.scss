@@ -7,9 +7,9 @@
 }
 
 .DualAsymmetric .ImageContainer {
-  padding: 3rem 4rem;
+  padding-top: 3rem;
   img {
-    max-width: 192px !important;
+    max-width: 250px !important;
     display: block;
     margin: 0 auto;
   }
@@ -41,12 +41,7 @@
 
 .DualAsymmetric .Button {
   margin: 1rem 0;
-  &.default {
-    @include primaryBtn;
-  }
-  &.alternative {
-    @include secondaryBtn;
-  }
+  @include primaryBtn;
 }
 
 @media (min-width: $breakpoint-sm) {
@@ -85,7 +80,11 @@
     &.right {
       order: 1;
     }
+    img {
+      max-width: 200px !important;
+    }
   }
+  
   .DualAsymmetric .TextContainer {
     padding: 3rem 0 3rem 2.5rem;
     p,
@@ -114,7 +113,9 @@
         1fr;
     }
     .ImageContainer {
-      padding: 0 0 0 2.5rem;
+      img {
+        max-width: 300px !important;
+      }
     }
     .TextContainer {
       padding: 5rem 0 5rem 2.5rem;
@@ -140,7 +141,7 @@
     }
     .ImageContainer {
       img {
-        max-width: 320px !important;
+        max-width: 350px !important;
       }
     }
   }
