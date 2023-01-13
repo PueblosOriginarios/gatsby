@@ -1,0 +1,6 @@
+.Logo {
+    /* Disable effects when sidebar is open */
+    filter: none !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+}
