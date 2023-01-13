@@ -9,7 +9,6 @@ const Materiales = ({ data }) => {
   const categories = data?.allSanityCategories?.nodes;
   const pdfs = data?.allSanityPdf?.nodes;
   const title = pageInfo?.title;
-  console.log(pdfs)
 
   const handleClick = (e) => {
     if (e.target.className === "Category Button Selected") {
