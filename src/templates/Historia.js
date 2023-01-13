@@ -14,9 +14,9 @@ const HistoriaPage = ({ data }) => {
   return (
     <>
       <Seo
-        title="Historia"
-        description="Página con información de la historia del pueblo originario"
-        keywords="Historia, Información, Pueblos, Originarios"
+        title='Historia'
+        description='Página con información de la historia del pueblo originario'
+        keywords='Historia, Información, Pueblos, Originarios'
       />
       <Page>
         <section className='article'>
@@ -223,11 +223,7 @@ export const query = graphql`
               nameButton
               link
             }
-            colorLeft {
-              title
-              value
-            }
-            colorRight {
+            bgColor {
               title
               value
             }

@@ -33,11 +33,7 @@ const useBannerDoble = () => {
           }
           description
           _rawContent
-          colorLeft {
-            title
-            value
-          }
-          colorRight {
+          bgColorBanner {
             title
             value
           }

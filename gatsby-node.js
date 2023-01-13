@@ -186,7 +186,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: node.tipoArticuloNoticia + "/noticias/" + node.slug.current,
       component: articleNoticiaDetail,
-      context: { slug: node.slug.current },
+      context: { slug: node.slug?.current },
     });
   });
 
