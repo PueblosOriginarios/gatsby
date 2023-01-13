@@ -4,9 +4,10 @@ import { graphql } from "gatsby";
 import "./Bibliografia.scss";
 import { PortableText } from "@portabletext/react";
 import Pdf from "../components/Pdf/Pdf";
+import SanityImage from "gatsby-plugin-sanity-image";
 
 const Bibliografia = ({ data }) => {
-  const { title } = data?.allSanityBibliografia?.nodes[0];
+  const { title, imageHeader } = data?.allSanityBibliografia?.nodes[0];
   const bibliografia = data?.allSanityComponentbibliografia?.nodes;
 
   bibliografia.sort(function (a, b) {
@@ -26,7 +27,14 @@ const Bibliografia = ({ data }) => {
           <section className='bibliografia'>
             <div className='bibliografiaHeader'>
               <div className='empty-left'></div>
-
+              <div className='mb-5'>
+              {imageHeader && (
+                <SanityImage
+                  {...imageHeader}
+                  alt='Image Art'
+                  className='imageHeader'
+                />
+              )}
               <div className='titleContent mb-4'>
                 <div></div>
                 {title && (
@@ -36,6 +44,7 @@ const Bibliografia = ({ data }) => {
                   </>
                 )}
                 <div></div>
+              </div>
               </div>
               <div className='empty-right'></div>
             </div>
@@ -73,12 +82,31 @@ export const query = graphql`
       nodes {
         title
         tipoBibliografia
+        imageHeader {
+          asset {
+            _id
+          }
+          crop {
+            _key
+            _type
+            bottom
+            left
+            right
+            top
+          }
+          hotspot {
+            _key
+            _type
+            height
+            width
+            x
+            y
+          }
+        }
       }
     }
 
-    allSanityComponentbibliografia(
-      filter: { filtroBilbliografia: { in: [$slug, "ambos"] } }
-    ) {
+    allSanityComponentbibliografia( filter: { filtroBilbliografia: { in: [$slug, "ambos"] }}) {
       nodes {
         author
         title

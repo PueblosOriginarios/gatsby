@@ -5,6 +5,12 @@
     display: grid;
     grid-template-columns: 1fr;
 
+    img {
+      height: 30vh;
+      width: 100%;
+      object-fit: cover;
+    }
+
     .titleContent {
       background: $light-green-2;
       color: $bg-white;
