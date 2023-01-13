@@ -14,9 +14,9 @@ const CulturaPage = ({ data }) => {
   return (
     <>
       <Seo
-        title="Cultura"
-        description="Página con información de la cultural del pueblo originario"
-        keywords="Cultura, Información, Pueblos, Originarios"
+        title='Cultura'
+        description='Página con información de la cultural del pueblo originario'
+        keywords='Cultura, Información, Pueblos, Originarios'
       />
       <Page>
         <section className='article'>
@@ -225,11 +225,7 @@ export const query = graphql`
               nameButton
               link
             }
-            colorLeft {
-              title
-              value
-            }
-            colorRight {
+            bgColor {
               title
               value
             }

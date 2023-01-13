@@ -85,11 +85,7 @@ export const query = graphql`
               link
               nameButton
             }
-            colorLeft {
-              title
-              value
-            }
-            colorRight {
+            bgColor {
               title
               value
             }

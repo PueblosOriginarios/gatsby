@@ -11,32 +11,18 @@
   display: flex;
   justify-content: center;
   height: 100%;
-  &.light {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote {
-      color: $bg-white;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote {
+    color: $bg-black;
   }
-  &.dark {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote {
-      color: $bg-black;
-    }
-    a {
-      color: $dark-green;
-    }
+  a {
+    color: $dark-green;
   }
   .TextContainer {
     display: flex;
@@ -71,15 +57,10 @@
 }
 .BannerDoble .Button {
   align-self: center;
-  margin: 16px 0;
-  &.default {
-    @include primaryBtn;
-    color: $bg-white !important;
-  }
-  &.alternative {
-    @include secondaryBtn;
-    color: $bg-black !important;
-  }
+  margin: 20px 0;
+
+  @include primaryBtn;
+  color: $bg-white !important;
 }
 
 @media (min-width: $breakpoint-md) {
@@ -104,18 +85,17 @@
 
 @media (min-width: $breakpoint-lg) {
   .BannerDoble {
-
     grid-template-columns:
       1fr var(--left-column-width, 320px) var(--right-column-width, 640px)
       1fr;
-      .Text .TextContainer .Subtitle {
-        img {
-          max-width: 50px;
-        }
+    .Text .TextContainer .Subtitle {
+      img {
+        max-width: 50px;
       }
-      .ImageContainer {
-        padding: 5rem 2.5rem;
-      }
+    }
+    .ImageContainer {
+      padding: 5rem 2.5rem;
+    }
   }
 }
 
@@ -124,16 +104,15 @@
     grid-template-columns:
       1fr var(--left-column-width, 370px) var(--right-column-width, 740px)
       1fr;
-      .Text {
-        justify-content: start;
-        padding-left: 5rem;
-      }
+    .Text {
+      justify-content: start;
+      padding-left: 5rem;
+    }
   }
 }
 
 @media (min-width: $breakpoint-xxl) {
   .BannerDoble {
-
     grid-template-columns:
       1fr var(--left-column-width, 420px) var(--right-column-width, 840px)
       1fr;
@@ -142,7 +121,6 @@
 
 @media (min-width: $breakpoint-xxxl) {
   .BannerDoble {
-
     grid-template-columns:
       1fr var(--left-column-width, 470px) var(--right-column-width, 940px)
       1fr;
@@ -151,7 +129,6 @@
 
 @media (min-width: $breakpoint-xxxxl) {
   .BannerDoble {
-
     grid-template-columns:
       1fr var(--left-column-width, 520px) var(--right-column-width, 1040px)
       1fr;

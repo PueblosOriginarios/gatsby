@@ -8,22 +8,14 @@ const BannerDoble = ({
     description,
     subtitle,
     _rawContent,
-    colorLeft,
-    colorRight,
+    bgColorBanner,
     image,
     button,
     buttonType,
   },
 }) => {
-  const bgColorImage = colorLeft === null ? "#4e7706" : colorLeft?.value;
-  const bgColorText = colorRight === null ? "#4e7706" : colorRight?.value;
   const altText = description === null ? "Banner Doble" : description;
 
-  const darkColors = ["#4e7706", "#868585", "#5A9939", "#1B1C1E", "#83b829"];
-  const textColor = darkColors.includes(bgColorText) ? "light" : "dark";
-  const buttonColor = darkColors.includes(bgColorText)
-    ? "alternative"
-    : "default";
   const subtitleIcon = subtitle?.imageIcon;
   const isExternalLink =
     button?.link?.includes("https") || button?.link?.includes("http");
@@ -32,25 +24,22 @@ const BannerDoble = ({
     <div className='BannerDoble'>
       <div
         className='emptyLeft'
-        style={{ backgroundColor: bgColorImage }}
+        style={{ backgroundColor: bgColorBanner?.value }}
       ></div>
 
       {image?.asset && (
         <div
           className='ImageContainer'
-          style={{ backgroundColor: bgColorImage }}
+          style={{ backgroundColor: bgColorBanner?.value }}
         >
           <SanityImage {...image} alt={altText} />
         </div>
       )}
 
-      <div
-        className={`Text ${textColor}`}
-        style={{ backgroundColor: bgColorText }}
-      >
+      <div className='Text' style={{ backgroundColor: bgColorBanner?.value }}>
         <div className='TextContainer'>
           {_rawContent && (
-            <PortableText value={_rawContent} style={{ color: textColor }} />
+            <PortableText value={_rawContent} style={{ color: "#1b1c1e" }} />
           )}
           {subtitleIcon && (
             <div className='Subtitle'>
@@ -69,7 +58,7 @@ const BannerDoble = ({
               <a
                 href={button?.link}
                 rel='noreferrer'
-                className={`Button ${buttonColor}`}
+                className='Button'
                 target={isExternalLink ? "_blank" : ""}
               >
                 <small>{button?.nameButton}</small>
@@ -88,7 +77,7 @@ const BannerDoble = ({
       </div>
       <div
         className='emptyRight'
-        style={{ backgroundColor: bgColorText }}
+        style={{ backgroundColor: bgColorBanner?.value }}
       ></div>
     </div>
   );
