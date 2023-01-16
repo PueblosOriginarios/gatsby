@@ -1,6 +1,35 @@
-.Logo {
-    /* Disable effects when sidebar is open */
-    filter: none !important;
-    pointer-events: auto !important;
-    user-select: auto !important;
-}
+
+ .logo-container{
+    width: 120px;
+    display: flex;
+    height: auto;
+    flex-flow: column wrap; 
+    width: 100%;
+    justify-content:center;
+    gap: 10px;
+    align-items: center;
+
+ }
+
+.logo-container img {
+    max-width: 120px;
+    object-fit: scale-down;
+  }
+  
+ 
+
+  @media (min-width: 768px) {
+    .logo-container {
+        display: flex;
+        height: auto;
+        width: 100%;
+        flex-flow: row wrap; 
+        justify-content:center;
+        gap: 20px;
+        align-items: center;
+    }
+    .logo-container img {
+        max-width: 160px;
+      }
+  }
+

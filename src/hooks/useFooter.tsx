@@ -5,7 +5,27 @@ const useFooter = () => {
     {
       allSanityFooter {
         nodes {
-          email
+          logo {
+            crop {
+              _key
+              _type
+              bottom
+              left
+              right
+              top
+            }
+            asset {
+              _id
+            }
+            hotspot {
+              _key
+              _type
+              height
+              width
+              x
+              y
+            }
+          }
         }
       }
     }

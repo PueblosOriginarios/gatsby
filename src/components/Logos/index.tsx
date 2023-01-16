@@ -7,14 +7,12 @@ export function Logos(): React.ReactElement {
   const footerLogos = useFooter().allSanityFooter?.nodes[0].logo;
    // console.log("hola!, " , footerLogos)
   return (
-    <div className={"Logo"} aria-roledescription="logo"> 
+    <div className="logo-container" > 
         {footerLogos && footerLogos.map((logo: any) => (
-        <div>
+          <div className="image-content"> 
           <SanityImage
           {...logo}
           alt="Logo"
-          width={120}
-          style={{ objectFit: "scale-down", maxWidth: "120px" }}
         /> 
         </div>
         ))} 
