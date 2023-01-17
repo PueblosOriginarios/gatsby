@@ -9,7 +9,7 @@ module.exports = {
       options: {
         siteUrl: "https://bithouse.com.ar", // Used for sitemap generation
         manifestSettings: {
-          favicon: "./content/images/bithouse.png", // Path is relative to the root
+         favicon: "./content/images/karapepo.png", // Path is relative to the root
           siteName: "Pueblos Originarios", // Used in manifest.json
           shortName: "Pueblos Originarios", // Used in manifest.json
           startUrl: "/", // Used in manifest.json
