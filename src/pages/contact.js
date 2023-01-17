@@ -11,8 +11,8 @@ export default function Contact() {
         <>
             <Seo
                 title="Contacto"
-                description="Esta es una pagina con un formulario de consulta para obtener informacion sobre la bithouse"
-                keywords="Bithouse, Contacto, Formulario, Consulta" />
+                description="Esta es una pagina con un formulario de consulta para obtener informacion sobre los pueblos originarios"
+                keywords="Contacto, Formulario, Consulta" />
             <Page>
                 <div className="container">
                     <div className="row contact">
