@@ -5,10 +5,10 @@ import { Helmet } from "react-helmet";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { Animation } from "../Animation";
 import "bootstrap/dist/css/bootstrap.min.css";
-import * as classes from "./style.module.css";
 import useHeader from "../../hooks/useHeader";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import * as classes from "./style.module.css";
 
 export function Header(): React.ReactElement {
   const [open, setOpen] = React.useState<boolean>(false);

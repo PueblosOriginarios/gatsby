@@ -74,11 +74,7 @@ const useHome = () => {
               }
               description
               _rawContent
-              colorLeft {
-                title
-                value
-              }
-              colorRight {
+              bgColorBanner {
                 title
                 value
               }
@@ -211,11 +207,7 @@ const useHome = () => {
                 nameButton
                 link
               }
-              colorLeft {
-                title
-                value
-              }
-              colorRight {
+              bgColor {
                 title
                 value
               }

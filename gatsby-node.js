@@ -73,20 +73,20 @@ exports.createPages = async ({ graphql, actions }) => {
     const pdfDetail = path.resolve("./src/templates/PdfPage.js");
     if (node?.tipoPdf === "ambos") {
       createPage({
-        path: "guarani/pdf/" + node.slug.current,
+        path: "guarani/pdf/" + node?.slug?.current,
         component: pdfDetail,
-        context: { slug: node.slug.current },
+        context: { slug: node?.slug?.current },
       });
       createPage({
-        path: "chane/pdf/" + node.slug.current,
+        path: "chane/pdf/" + node?.slug?.current,
         component: pdfDetail,
-        context: { slug: node.slug.current },
+        context: { slug: node?.slug?.current },
       });
     } else {
       createPage({
-        path: node?.tipoPdf + "/pdf/" + node.slug.current,
+        path: node?.tipoPdf + "/pdf/" + node?.slug?.current,
         component: pdfDetail,
-        context: { slug: node.slug.current },
+        context: { slug: node?.slug?.current },
       });
     }
   });
@@ -186,7 +186,33 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: node.tipoArticuloNoticia + "/noticias/" + node.slug.current,
       component: articleNoticiaDetail,
-      context: { slug: node.slug.current },
+      context: { slug: node.slug?.current },
     });
   });
-};
+
+
+ // CREACION DE PAGINAS DE BIBLIOGRAFIA
+ const { data: bibliografiaQueryData } = await graphql(`
+ query Bibliografia {
+   allSanityBibliografia {
+     nodes {
+       tipoBibliografia
+     }
+   }
+ }
+`);
+if (bibliografiaQueryData.errors) {
+ reporter.panicOnBuild("Error creando paginas de bibliografia");
+}
+bibliografiaQueryData.allSanityBibliografia.nodes.forEach((node) => {
+ const bibliografiaDetail = path.resolve("./src/templates/Bibliografia.js");
+ createPage({
+   path: node.tipoBibliografia + "/bibliografia/",
+   component: bibliografiaDetail,
+   context: { slug: node.tipoBibliografia },
+ });
+});
+
+
+
+ };

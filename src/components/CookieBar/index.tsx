@@ -3,8 +3,8 @@ import CookieConsent from 'react-cookie-consent';
 import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies';
 import { useLocation } from '@reach/router';
 import { Animation } from '../Animation';
-import './style.css'; // Uses the class names from the original package
 import * as classes from './style.module.css';
+import './style.css'; // Uses the class names from the original package
 
 export function CookieBar(): React.ReactElement {
     const location = useLocation();

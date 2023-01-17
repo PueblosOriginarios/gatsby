@@ -6,8 +6,10 @@
   flex-direction: column;
   justify-content: center;
   img {
-    max-width: min(100%, 320px);
-    margin: 0 1.5rem;
+    max-width: min(100%, 400px);
+    margin: 0 1rem;
+    border-radius: 0.2rem;
+    box-shadow: 1.5px 1.5px rgb(0 0 0 / 10%);
   }
   .Button {
     @include primaryBtn;
@@ -16,7 +18,7 @@
 }
 
 .Pdf .DescriptionContainer {
-  margin: 1rem 1.5rem;
+  margin: 2rem 1rem;
   p {
     margin: 1rem 0;
   }
@@ -26,28 +28,22 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  gap: 10px;
 }
 .Pdf .Category {
-  margin: 0 0.25rem;
-  padding: 0.25rem;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.5rem;
   border: 0.125rem solid $light-gray-1;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   background-color: $light-gray-2;
 }
 
-@media screen and (min-width: $breakpoint-sm) {
-  .Pdf {
-    img {
-      max-width: 400px;
-    }
-  }
-}
 
 @media screen and (min-width: $breakpoint-md) {
   .Pdf {
     flex-direction: row;
     img {
-      max-width: 450px;
+      max-width: 350px;
       margin: 0 1rem;
     }
     .Button {

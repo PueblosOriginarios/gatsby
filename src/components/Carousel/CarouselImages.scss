@@ -2,6 +2,7 @@
 @import "../../globalStyles/theme.scss";
 
 .CarouselContainer {
+  background-color: $light-gray-2;
   display: grid;
   grid-template-columns: 1fr;
   margin: 0;
@@ -29,6 +30,7 @@
   }
   img {
     object-fit: cover;
+    border-radius: 0.2rem;
   }
   .slider-wrapper {
     height: 450px;
