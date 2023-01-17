@@ -1,9 +1,9 @@
 import React from "react";
 import { Page } from "../components/index";
 import { graphql } from "gatsby";
-import "./Noticias.scss";
 import CardsNoticias from "../components/CardsNoticias/CardsNoticias";
 import CardEvento from "../components/CardEventos/CardsEventos";
+import "./Noticias.scss";
 
 const NoticiasPage = ({ data }) => {
   const { title } = data?.allSanityNoticias?.nodes[0];

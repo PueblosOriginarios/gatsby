@@ -8,24 +8,5 @@
 }
 
 .main {
-    margin-bottom: 6rem;
-}
-
-@media (min-width: 768px) {
-    .main {
-        margin-bottom: 0;
-    }
-}
-
-
-@media (min-width: 820px) {
-    .main {
-        margin-bottom: 3rem;
-    }
-}
-
-@media (min-width: 990px) {
-    .main {
-        margin-bottom: 0;
-    }
+    margin-bottom: 0rem;
 }

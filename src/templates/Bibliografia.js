@@ -1,10 +1,10 @@
 import React from "react";
 import { Page } from "../components/index";
 import { graphql } from "gatsby";
-import "./Bibliografia.scss";
 import { PortableText } from "@portabletext/react";
 import Pdf from "../components/Pdf/Pdf";
 import SanityImage from "gatsby-plugin-sanity-image";
+import "./Bibliografia.scss";
 
 const Bibliografia = ({ data }) => {
   const { title, imageHeader } = data?.allSanityBibliografia?.nodes[0];
@@ -27,24 +27,24 @@ const Bibliografia = ({ data }) => {
           <section className='bibliografia'>
             <div className='bibliografiaHeader'>
               <div className='empty-left'></div>
-              <div className='mb-5'>
-              {imageHeader && (
-                <SanityImage
-                  {...imageHeader}
-                  alt='Image Art'
-                  className='imageHeader'
-                />
-              )}
-              <div className='titleContent mb-4'>
-                <div></div>
-                {title && (
-                  <>
-                    <h5 className='title'>{title}</h5>
-                    <div className='vacio'></div>
-                  </>
+              <div className='mb-lg-4'>
+                {imageHeader && (
+                  <SanityImage
+                    {...imageHeader}
+                    alt='Image Art'
+                    className='imageHeader'
+                  />
                 )}
-                <div></div>
-              </div>
+                <div className='titleContent mb-4'>
+                  <div></div>
+                  {title && (
+                    <>
+                      <h5 className='title'>{title}</h5>
+                      <div className='vacio'></div>
+                    </>
+                  )}
+                  <div></div>
+                </div>
               </div>
               <div className='empty-right'></div>
             </div>
@@ -106,7 +106,9 @@ export const query = graphql`
       }
     }
 
-    allSanityComponentbibliografia( filter: { filtroBilbliografia: { in: [$slug, "ambos"] }}) {
+    allSanityComponentbibliografia(
+      filter: { filtroBilbliografia: { in: [$slug, "ambos"] } }
+    ) {
       nodes {
         author
         title
