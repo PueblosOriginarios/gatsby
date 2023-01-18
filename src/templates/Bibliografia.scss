@@ -10,7 +10,7 @@
       width: 100%;
       object-fit: cover;
     }
-
+    
     .titleContent {
       background: $light-green-2;
       color: $bg-white;
@@ -37,7 +37,7 @@
     grid-template-columns: 1fr;
 
     .textBibliografia {
-      padding: 1.5rem;
+      padding: 1rem;
     }
 
     .line {
@@ -45,6 +45,16 @@
       height: 2px;
       max-width: 100%;
       margin: 0 auto;
+    }
+
+    .imageMainContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .imageContainer img {
+      padding-bottom: 1rem;
+      max-width: 300px;
     }
   }
 }
@@ -64,6 +74,13 @@
       .textBibliografia {
         display: grid;
         grid-template-columns: 1fr 700px 1fr;
+      }
+      .imageMainContainer {
+        display: flex;
+        flex-direction: row;
+      }
+      .textContanier{
+        padding-left: 1.5rem;
       }
     }
   }
