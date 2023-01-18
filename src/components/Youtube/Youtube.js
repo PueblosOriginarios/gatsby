@@ -38,7 +38,7 @@ function Youtube({ titulo, videoUrl }) {
           </div>
         )}
       </div>
-      <div class='empty-right'></div>
+      <div className='empty-right'></div>
     </div>
   );
 }

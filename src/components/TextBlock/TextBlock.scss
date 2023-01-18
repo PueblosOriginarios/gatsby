@@ -3,6 +3,11 @@
 .textContainer {
   grid-template-columns: 1fr;
   padding: 0 1.5rem;
+ .contentText {
+  button {
+    @include primaryBtn;
+  }
+ }
 }
 
 @media (min-width: $breakpoint-md) {
