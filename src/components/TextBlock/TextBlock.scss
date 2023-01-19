@@ -5,7 +5,12 @@
   padding: 0 1.5rem;
  .contentText {
   button {
-    @include primaryBtn;
+    /* @include primaryBtn; */
+    color: $dark-green !important;
+    font-weight: bold !important;
+    text-decoration: underline !important;
+    margin-bottom: 2rem !important;
+    all: unset;
   }
  }
 }
@@ -16,8 +21,12 @@
     grid-template-columns:
       1fr var(--middle-column-width, 690px)
       1fr;
-
     padding: 2rem 2.5rem;
+    .contentText {
+      button {
+        margin-bottom: 0rem !important;
+      }
+     }
   }
 }
 
