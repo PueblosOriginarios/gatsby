@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Theme, useGlobalState } from '../../context';
-import { SplashScreen } from '../SplashScreen';
 import { Footer } from '../Footer/index';
 import { Header } from '../Header/index';
 import { CookieBar } from '../CookieBar';
@@ -25,7 +24,6 @@ export function Layout(props: LayoutProps): React.ReactElement {
     const splashScreenView = (
         <>
             <Helmet bodyAttributes={{ 'data-theme': Theme.Light }} />
-            <SplashScreen />
         </>
     );
 
