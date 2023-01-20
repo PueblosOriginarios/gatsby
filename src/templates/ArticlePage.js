@@ -214,6 +214,7 @@ export const query = graphql`
             _key
             _type
             _rawRichText
+            _rawRichTextOculto
             subTitle
           }
         }

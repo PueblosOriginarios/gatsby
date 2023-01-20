@@ -159,6 +159,7 @@ export const query = graphql`
             _type
             subTitle
             _rawRichText
+            _rawRichTextOculto
           }
           ... on SanityYoutube {
             _key

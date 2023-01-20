@@ -11,6 +11,7 @@ const useHome = () => {
               _type
               subTitle
               _rawRichText
+              _rawRichTextOculto
             }
             ... on SanityBanner {
               imageDescription
