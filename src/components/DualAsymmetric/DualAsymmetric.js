@@ -14,10 +14,10 @@ const DualAsymmetric = ({
     imageSide,
     button,
     urlAudio,
+    imageDescription
   },
 }) => {
   const altText = description === null ? "Banner Dual Asimetric" : description;
-
   return (
     <div className={`DualAsymmetric ${imageSide}`}>
       <div
@@ -30,6 +30,7 @@ const DualAsymmetric = ({
           style={{ backgroundColor: bgColor?.value }}
         >
           <SanityImage {...image} alt={altText} />
+          {imageDescription && <div className="ImageDescription">{imageDescription}</div>}
         </div>
       )}
       <div

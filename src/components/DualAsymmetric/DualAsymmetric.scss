@@ -15,6 +15,13 @@
   }
 }
 
+.DualAsymmetric .ImageDescription {
+    font-size: 0.875rem;
+    max-width: 250px !important;
+    display: block;
+    margin: 0 auto; 
+}
+
 .DualAsymmetric .TextContainer {
   display: flex;
   flex-direction: column;
@@ -72,9 +79,13 @@
         1fr;
     }
     max-height: 100vh;
+    .ImageDescription {
+      max-width: 200px !important;
+    }
   }
   .DualAsymmetric .ImageContainer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 1.5rem;
     &.right {
@@ -125,6 +136,11 @@
         }
       }
     }
+
+    .ImageDescription {
+      font-size: 1rem;
+      max-width: 300px !important;
+    }
   }
 }
 
@@ -143,6 +159,9 @@
       img {
         max-width: 350px !important;
       }
+    }
+    .ImageDescription {
+      max-width: 350px !important;
     }
   }
   .DualAsymmetric .TextContainer {

@@ -5,6 +5,7 @@ const useBanner = () => {
     {
       allSanityBanner {
         nodes {
+          imageDescription
           title
           description
           color {
