@@ -22,8 +22,9 @@
   }
 
   .imageDescription {
-    font-size: 0.875rem;
-    text-align: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-align: left;
   }
 }
 
@@ -42,6 +43,11 @@
 
     .video {
       height: 400px;
+    }
+
+    .imageDescription {
+      font-size: 0.8rem;
+      padding-top: 0.2rem;
     }
   }
 }

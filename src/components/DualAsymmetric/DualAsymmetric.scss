@@ -17,7 +17,8 @@
 }
 
 .DualAsymmetric .ImageDescription {
-    font-size: 0.875rem;
+    font-weight: bold;
+    font-size: 0.7rem;
     max-width: 250px !important;
     display: block;
     margin: 0 auto; 
@@ -82,6 +83,7 @@
     max-height: 100vh;
     .ImageDescription {
       max-width: 200px !important;
+      padding-top: 0.2rem;
     }
   }
   .DualAsymmetric .ImageContainer {
@@ -139,7 +141,7 @@
     }
 
     .ImageDescription {
-      font-size: 1rem;
+      font-size: 0.8rem;
       max-width: 300px !important;
     }
   }
@@ -162,7 +164,7 @@
       }
     }
     .ImageDescription {
-      max-width: 350px !important;
+      max-width: 300px !important;
     }
   }
   .DualAsymmetric .TextContainer {

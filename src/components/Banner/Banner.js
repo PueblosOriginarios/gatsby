@@ -13,7 +13,7 @@ const Banner = ({ data: { title, description, color, image, imageDescription } }
       {image && (
         <div className="ImageContainer">
           <SanityImage {...image} alt={altText} className="ImageWrapper" />
-          {imageDescription && <div>{imageDescription}</div>}
+          {imageDescription && <div className='ImageDescription'>{imageDescription}</div>}
         </div>
       )}
       {showText && (

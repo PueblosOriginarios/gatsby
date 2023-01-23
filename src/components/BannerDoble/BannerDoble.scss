@@ -48,6 +48,13 @@
     img {
       max-width: 192px;
     }
+    .ImageDescription{
+      font-weight: bold;
+      font-size: 0.7rem;
+      max-width: 192px;
+      display: block;
+      margin: 0 auto; 
+    }
   }
 }
 
@@ -73,6 +80,9 @@
     .ImageContainer {
       padding: 1.5rem;
       justify-content: flex-start;
+      .ImageDescription{
+        font-size: 0.8rem;
+      }
     }
   }
   .BannerDoble {
