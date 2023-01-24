@@ -6,10 +6,12 @@ const CardEvento = ({ data }) => {
   const cardsComponent = data?.map((evento) => {
     const eventoData = {
       title: evento?.title,
-      _rawContent: evento?._rawContenidoEvento,
+      contenidoEvento: evento?.contenidoEvento,
       artists: evento?.iconEvento,
       shortText: evento?.shortText,
+      link: evento?.link,
     };
+    
     return <Card data={eventoData} key={evento?.id} />;
   });
 
