@@ -1,4 +1,3 @@
-import Banner from "./Banner/Banner";
 import BannerDoble from "./BannerDoble/BannerDoble";
 import Card from "./Card/Card";
 import CarouselImages from "./Carousel/CarouselImages";
@@ -12,7 +11,6 @@ import Youtube from "./Youtube/Youtube";
 import CardsNoticias from "./CardsNoticias/CardsNoticias";
 
 export {
-  Banner,
   BannerDoble,
   Card,
   CarouselImages,
