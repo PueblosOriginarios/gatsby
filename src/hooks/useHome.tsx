@@ -13,38 +13,6 @@ const useHome = () => {
               _rawRichText
               _rawRichTextOculto
             }
-            ... on SanityBanner {
-              imageDescription
-              id
-              _type
-              title
-              description
-              color {
-                title
-                value
-              }
-              image {
-                crop {
-                  _key
-                  _type
-                  top
-                  bottom
-                  left
-                  right
-                }
-                hotspot {
-                  _key
-                  _type
-                  x
-                  y
-                  height
-                  width
-                }
-                asset {
-                  _id
-                }
-              }
-            }
             ... on SanityBannerDoble {
               imageDescription
               id

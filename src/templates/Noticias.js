@@ -53,9 +53,10 @@ export const query = graphql`
     }
     allSanityEventos(filter: { tipoEventos: { eq: $slug } }) {
       nodes {
-        _rawContenidoEvento
+        contenidoEvento
         title
         tipoEventos
+        link
         shortText
         iconEvento {
           label

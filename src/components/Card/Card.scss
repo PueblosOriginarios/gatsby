@@ -46,6 +46,15 @@
     overflow: hidden;
   }
 
+  .RawContent {
+    p {
+      // body-medium
+      font-size: $xxxxs !important;
+      font-weight: $lighter !important;
+      line-height: 20px;
+    }
+  }
+
   .Content {
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -53,13 +62,6 @@
     line-clamp: 4;
     text-overflow: ellipsis;
     overflow: hidden;
-
-    p {
-      // body-medium
-      font-size: $xxxxs !important;
-      font-weight: $lighter !important;
-      line-height: 20px;
-    }
   }
 
   .ImageContainer {
