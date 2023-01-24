@@ -4,3 +4,15 @@
     pointer-events: auto !important;
     user-select: auto !important;
 }
+
+
+.Logo img {
+    object-fit: scale-down;
+    max-width: 80px;
+}
+
+@media (min-width: 1024px){
+    .Logo img {
+        max-width: 120px;
+    }
+}
