@@ -70,6 +70,7 @@ export const query = graphql`
       nodes {
         ArticleBuilder {
           ... on SanityDualAsymmetric {
+            imageDescription
             id
             _type
             imageSide
@@ -173,6 +174,7 @@ export const query = graphql`
                 }
               }
               youtubeVideo {
+                imageDescription
                 url
               }
             }
@@ -206,6 +208,7 @@ export const query = graphql`
             _type
             titulo
             url
+            imageDescription
           }
           ... on SanityTextBlock {
             _key

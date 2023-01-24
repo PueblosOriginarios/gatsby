@@ -40,12 +40,22 @@
 .BannerDoble {
   .ImageContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     padding: 3rem 4rem;
     img {
       max-width: 192px;
+    }
+    .ImageDescription{
+      padding-top: 0.2rem;
+      line-height: 1rem;
+      font-weight: bold;
+      font-size: 0.7rem;
+      max-width: 192px;
+      display: block;
+      margin: 0 auto; 
     }
   }
 }
@@ -72,6 +82,9 @@
     .ImageContainer {
       padding: 1.5rem;
       justify-content: flex-start;
+      .ImageDescription{
+        font-size: 0.8rem;
+      }
     }
   }
   .BannerDoble {

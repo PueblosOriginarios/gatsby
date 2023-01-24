@@ -1,7 +1,7 @@
 import React from "react";
 import "./Youtube.scss";
 
-function Youtube({ titulo, videoUrl }) {
+function Youtube({ titulo, videoUrl, imageDescription }) {
   const url = videoUrl?.replace("watch?v=", "embed/");
   let code = url?.substring(url.lastIndexOf("/") + 1, url.length);
   const codeIndex = code?.indexOf("?");
@@ -37,6 +37,7 @@ function Youtube({ titulo, videoUrl }) {
             )}
           </div>
         )}
+          {imageDescription &&  <div className='imageDescription'>{imageDescription}</div>}
       </div>
       <div className='empty-right'></div>
     </div>

@@ -14,6 +14,7 @@ const useHome = () => {
               _rawRichTextOculto
             }
             ... on SanityBannerDoble {
+              imageDescription
               id
               _type
               title
@@ -116,6 +117,7 @@ const useHome = () => {
                 }
               }
               youtubeVideo {
+                imageDescription
                 url
               }
               imageDualS {
@@ -141,6 +143,7 @@ const useHome = () => {
               }
             }
             ... on SanityDualAsymmetric {
+              imageDescription
               id
               _type
               title

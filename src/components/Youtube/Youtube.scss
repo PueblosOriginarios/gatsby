@@ -20,6 +20,13 @@
       height: 100%;
     }
   }
+
+  .imageDescription {
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1rem;
+  }
 }
 
 @media (min-width: 425px) {
@@ -37,6 +44,11 @@
 
     .video {
       height: 400px;
+    }
+
+    .imageDescription {
+      font-size: 0.8rem;
+      padding-top: 0.2rem;
     }
   }
 }

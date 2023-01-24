@@ -5,6 +5,7 @@ const useBannerDoble = () => {
     {
       allSanityBannerDoble {
         nodes {
+          imageDescription
           title
           subtitle {
             description

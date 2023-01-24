@@ -124,6 +124,7 @@ export const query = graphql`
                 description
               }
               youtubeVideo {
+                imageDescription
                 url
               }
               imageDualS {
@@ -186,8 +187,10 @@ export const query = graphql`
             _type
             url
             titulo
+            imageDescription
           }
           ... on SanityDualAsymmetric {
+            imageDescription
             id
             _type
             title

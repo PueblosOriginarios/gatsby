@@ -12,6 +12,7 @@ const BannerDoble = ({
     image,
     button,
     buttonType,
+    imageDescription
   },
 }) => {
   const altText = description === null ? "Banner Doble" : description;
@@ -33,6 +34,7 @@ const BannerDoble = ({
           style={{ backgroundColor: bgColorBanner?.value }}
         >
           <SanityImage {...image} alt={altText} />
+          {imageDescription && <div className='ImageDescription'>{imageDescription}</div>}
         </div>
       )}
 

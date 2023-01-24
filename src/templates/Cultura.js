@@ -88,6 +88,7 @@ export const query = graphql`
             _type
             dualSymmetric {
               youtubeVideo {
+                imageDescription
                 titulo
                 url
               }
@@ -188,8 +189,10 @@ export const query = graphql`
             _type
             titulo
             url
+            imageDescription
           }
           ... on SanityDualAsymmetric {
+            imageDescription
             id
             _type
             title
