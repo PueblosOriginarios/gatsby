@@ -17,7 +17,7 @@ const LenguaPage = ({ data }) => {
           <div className='articleHeader'>
             <div className='empty-left'></div>
 
-            <div className='mb-5'>
+            <div>
               {imageHeader && (
                 <SanityImage
                   {...imageHeader}
@@ -118,6 +118,7 @@ export const query = graphql`
                 link
               }
               youtubeVideo {
+                imageDescription
                 titulo
                 url
               }
@@ -158,14 +159,17 @@ export const query = graphql`
             _type
             subTitle
             _rawRichText
+            _rawRichTextOculto
           }
           ... on SanityYoutube {
             _key
             _type
             url
             titulo
+            imageDescription
           }
           ... on SanityDualAsymmetric {
+            imageDescription
             id
             _type
             title

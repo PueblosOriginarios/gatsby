@@ -50,10 +50,6 @@ export function Seo(props: SeoProps) {
           content: `summary`,
         },
         {
-          name: `twitter:creator`,
-          content: `Bithouse`,
-        },
-        {
           name: `twitter:title`,
           content: siteMetadata.title,
         },

@@ -23,7 +23,7 @@ const CulturaPage = ({ data }) => {
           <div className='articleHeader'>
             <div className='empty-left'></div>
 
-            <div className='mb-5'>
+            <div>
               {imageHeader && (
                 <SanityImage
                   {...imageHeader}
@@ -88,6 +88,7 @@ export const query = graphql`
             _type
             dualSymmetric {
               youtubeVideo {
+                imageDescription
                 titulo
                 url
               }
@@ -180,6 +181,7 @@ export const query = graphql`
             _key
             _type
             _rawRichText
+            _rawRichTextOculto
             subTitle
           }
           ... on SanityYoutube {
@@ -187,8 +189,10 @@ export const query = graphql`
             _type
             titulo
             url
+            imageDescription
           }
           ... on SanityDualAsymmetric {
+            imageDescription
             id
             _type
             title

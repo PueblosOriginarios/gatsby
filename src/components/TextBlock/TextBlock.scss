@@ -3,6 +3,16 @@
 .textContainer {
   grid-template-columns: 1fr;
   padding: 0 1.5rem;
+ .contentText {
+  button {
+    /* @include primaryBtn; */
+    color: $dark-green !important;
+    font-weight: bold !important;
+    text-decoration: underline !important;
+    margin-bottom: 2rem !important;
+    all: unset;
+  }
+ }
 }
 
 @media (min-width: $breakpoint-md) {
@@ -11,8 +21,12 @@
     grid-template-columns:
       1fr var(--middle-column-width, 690px)
       1fr;
-
-    padding: 2rem 2.5rem;
+    padding: 2rem;
+    .contentText {
+      button {
+        margin-bottom: 0rem !important;
+      }
+     }
   }
 }
 

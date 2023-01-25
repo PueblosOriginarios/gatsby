@@ -57,11 +57,22 @@ const Bibliografia = ({ data }) => {
                   <div>
                     <h5 className='title'>{item.title}</h5>
                     <p> Por {item.author}</p>
-                    <PortableText value={item._rawRichTextBody} />
-                    <Pdf data={item?.referenceBibliografia} />
+                    <div className='imageMainContainer'>
+                      <div className='imageContainer'>
+                        {item.image && (
+                        <SanityImage
+                          {...item.image}
+                          alt='Image Art'
+                        />
+                        ) } 
+                      </div>
+                      <div className='textContanier'>
+                        <PortableText value={item._rawRichTextBody} />
+                        <Pdf data={item?.referenceBibliografia} />
+                      </div>
+                    </div>
                     <div className='line'></div>
                   </div>
-
                   <div></div>
                 </div>
                 <div className='empty-right'></div>
@@ -112,6 +123,27 @@ export const query = graphql`
       nodes {
         author
         title
+        image {
+          asset {
+            _id
+          }
+          crop {
+            _key
+            _type
+            bottom
+            left
+            right
+            top
+          }
+          hotspot {
+            _key
+            _type
+            height
+            width
+            x
+            y
+          }
+        }
         _rawRichTextBody
         filtroBilbliografia
         referenceBibliografia {

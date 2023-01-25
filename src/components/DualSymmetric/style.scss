@@ -114,7 +114,11 @@
       1fr var(--left-column-width, 480px) var(--right-column-width, 480px)
       1fr;
       .TextDetails {
-        padding: 5rem 2rem 5rem 2.5rem;
+        padding: 5rem 2rem 5rem 0rem;
+        &.left {
+          padding-left: 2.5rem;
+        }
+        
       }
 
     .videoContainer {

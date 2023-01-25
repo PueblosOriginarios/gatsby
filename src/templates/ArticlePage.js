@@ -2,29 +2,13 @@ import React from "react";
 import { Page } from "../components/Page/index";
 import { graphql } from "gatsby";
 import SanityImage from "gatsby-plugin-sanity-image";
-import { CustomSection, Card } from "../components/index";
+import { CustomSection } from "../components/index";
 import "./ArticlePage.scss";
 
 const ArticlePage = ({ data }) => {
-  const {
-    title,
-    imageHeader,
-    otherTitle,
-    articleReferences,
-  } = data?.allSanityArticle?.nodes[0];
+  const { title, imageHeader } = data?.allSanityArticle?.nodes[0];
 
   const pageInfo = data?.allSanityArticle?.nodes[0];
-
-  const cardsComponent = articleReferences
-    ?.map((article, id) => {
-      const articleData = {
-        title: article?.articleReference?.title,
-        image: article?.articleReference?.imageHeader,
-        slug: article?.articleReference?.slug.current,
-      };
-      return <Card data={articleData} key={id} />;
-    })
-    .slice(0, 3);
 
   return (
     <>
@@ -48,14 +32,6 @@ const ArticlePage = ({ data }) => {
             <div className='empty-right'></div>
           </div>
           <CustomSection sections={pageInfo?.ArticleBuilder} />
-          <div className='cardsArticle py-4'>
-            <div className='empty-left'></div>
-            <div className='cardsContent'>
-              {otherTitle && <h4 className='py-4'>{otherTitle}</h4>}
-              <div className='cards'>{cardsComponent}</div>
-            </div>
-            <div className='empty-right'></div>
-          </div>
         </section>
       </Page>
     </>
@@ -70,6 +46,7 @@ export const query = graphql`
       nodes {
         ArticleBuilder {
           ... on SanityDualAsymmetric {
+            imageDescription
             id
             _type
             imageSide
@@ -173,6 +150,7 @@ export const query = graphql`
                 }
               }
               youtubeVideo {
+                imageDescription
                 url
               }
             }
@@ -206,11 +184,13 @@ export const query = graphql`
             _type
             titulo
             url
+            imageDescription
           }
           ... on SanityTextBlock {
             _key
             _type
             _rawRichText
+            _rawRichTextOculto
             subTitle
           }
         }

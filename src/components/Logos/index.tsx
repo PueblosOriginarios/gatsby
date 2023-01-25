@@ -5,9 +5,9 @@ import "./style.css";
 
 export function Logos(): React.ReactElement {
   const footerLogos = useFooter().allSanityFooter?.nodes[0].logo;
-   // console.log("hola!, " , footerLogos)
+  
   return (
-    <div className="logo-container" > 
+    <div className="logo-container py-4"> 
         {footerLogos && footerLogos.map((logo: any) => (
           <div className="image-content"> 
           <SanityImage

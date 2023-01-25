@@ -10,6 +10,7 @@ const useDualSymmetric = () => {
               shortText
               imageSide
               youtubeVideo {
+                imageDescription
                 url
               }
               backgroundColor {

@@ -9,11 +9,11 @@ export function Logo(): React.ReactElement {
   return (
     <div className={"Logo"} aria-roledescription="logo">
       {headerImageDesktop && (
-        <SanityImage
+        <SanityImage 
           {...headerImageDesktop}
           alt="Logo"
           width={120}
-          style={{ objectFit: "scale-down", maxWidth: "120px" }}
+
         />
       )}
     </div>

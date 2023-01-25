@@ -7,7 +7,7 @@ module.exports = {
     {
       resolve: "gatsby-theme-portfolio-minimal",
       options: {
-        siteUrl: "https://bithouse.com.ar", // Used for sitemap generation
+        siteUrl: "", // Used for sitemap generation
         manifestSettings: {
          favicon: "./content/images/karapepo.png", // Path is relative to the root
           siteName: "Pueblos Originarios", // Used in manifest.json

@@ -11,39 +11,10 @@ const useHome = () => {
               _type
               subTitle
               _rawRichText
-            }
-            ... on SanityBanner {
-              id
-              _type
-              title
-              description
-              color {
-                title
-                value
-              }
-              image {
-                crop {
-                  _key
-                  _type
-                  top
-                  bottom
-                  left
-                  right
-                }
-                hotspot {
-                  _key
-                  _type
-                  x
-                  y
-                  height
-                  width
-                }
-                asset {
-                  _id
-                }
-              }
+              _rawRichTextOculto
             }
             ... on SanityBannerDoble {
+              imageDescription
               id
               _type
               title
@@ -146,6 +117,7 @@ const useHome = () => {
                 }
               }
               youtubeVideo {
+                imageDescription
                 url
               }
               imageDualS {
@@ -171,6 +143,7 @@ const useHome = () => {
               }
             }
             ... on SanityDualAsymmetric {
+              imageDescription
               id
               _type
               title
