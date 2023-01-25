@@ -11,7 +11,7 @@ function Youtube({ titulo, videoUrl, imageDescription }) {
   }
 
   return (
-    <div className='youtubeContainer mt-4'>
+    <div className='youtubeContainer mt-5'>
       <div className='empty-left'></div>
       <div className='contentVideo'>
         <h4 className='headline-small'>{titulo}</h4>

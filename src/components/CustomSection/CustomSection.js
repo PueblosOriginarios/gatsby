@@ -25,9 +25,7 @@ const CustomSection = ({ sections }) => {
         ) : null}
 
         {section?.images !== null && section?.images !== undefined ? (
-          <div className='my-3'>
-            <CarouselImages key={index} data={section} />
-          </div>
+          <CarouselImages key={index} data={section} />
         ) : null}
 
         {section?._type !== null &&
