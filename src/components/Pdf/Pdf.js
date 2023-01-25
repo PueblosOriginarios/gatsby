@@ -3,29 +3,31 @@ import SanityImage from "gatsby-plugin-sanity-image";
 import { PortableText } from "@portabletext/react";
 import "./Pdf.scss";
 
-const Pdf = ({
-  data: { image, title, _rawShortDescription, link, categoryReferences },
-}) => {
+const Pdf = ({ data }) => {
+  console.log(data);
+  console.log(data?.title);
   return (
-    <div className="Pdf">
-      {image && <SanityImage {...image} alt={title} />}
-      <div className="DescriptionContainer">
-        <h4>{title}</h4>
-        <PortableText value={_rawShortDescription} />
-        {categoryReferences && (
-          <div className="Categories">
-            {categoryReferences?.map((ref) => {
+    <div className='Pdf'>
+      {data?.image !== null && data?.image !== undefined && (
+        <SanityImage {...data?.image} alt={data?.title} />
+      )}
+      <div className='DescriptionContainer'>
+        <h4>{data?.title}</h4>
+        <PortableText value={data?._rawShortDescription} />
+        {data?.categoryReferences && (
+          <div className='Categories'>
+            {data?.categoryReferences?.map((ref) => {
               const category = ref?.categoryReference?.category;
-              return <span className="Category">{category}</span>;
+              return <span className='Category'>{category}</span>;
             })}
           </div>
         )}
-        {link && (
+        {data?.link && (
           <a
-            className="Button"
-            href={link}
-            target="_blank"
-            rel="noreferrer noopener"
+            className='Button'
+            href={data?.link}
+            target='_blank'
+            rel='noreferrer noopener'
           >
             <small>Descargar PDF</small>
           </a>

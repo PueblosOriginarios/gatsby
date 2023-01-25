@@ -7,31 +7,31 @@ import "./PdfPage.scss";
 
 const PdfPage = ({ data }) => {
   const pageInfo = data?.allSanityPdf?.nodes[0];
-
+  console.log(pageInfo);
   return (
     <>
       <Seo
-        title="PDF"
-        description="Página con material didáctico en formato PDF y una descripción"
-        keywords="PDF, Material, Articulo"
+        title='PDF'
+        description='Página con material didáctico en formato PDF y una descripción'
+        keywords='PDF, Material, Articulo'
       />
       <Page>
-        <section className="PdfArticle">
-          <div className="empty-left"></div>
-          <div className="ContentContainer">
+        <section className='PdfArticle'>
+          <div className='empty-left'></div>
+          <div className='ContentContainer'>
             <Pdf data={pageInfo} />
             {pageInfo?._rawDescription && (
-              <div className="Description">
+              <div className='Description'>
                 <PortableText value={pageInfo?._rawDescription} />
               </div>
             )}
             {pageInfo?._rawCenteredText && (
-              <div className="CenteredText">
+              <div className='CenteredText'>
                 <PortableText value={pageInfo?._rawCenteredText} />
               </div>
             )}
           </div>
-          <div className="empty-right"></div>
+          <div className='empty-right'></div>
         </section>
       </Page>
     </>
