@@ -11,10 +11,10 @@ const Bibliografia = ({ data }) => {
   const bibliografia = data?.allSanityComponentbibliografia?.nodes;
 
   bibliografia.sort(function (a, b) {
-    if (a.author.toLowerCase() > b.author.toLowerCase()) {
+    if (a.author?.toLowerCase() > b.author?.toLowerCase()) {
       return 1;
     }
-    if (a.author.toLowerCase() < b.author.toLowerCase()) {
+    if (a.author?.toLowerCase() < b.author?.toLowerCase()) {
       return -1;
     }
     return 0;
@@ -60,11 +60,8 @@ const Bibliografia = ({ data }) => {
                     <div className='imageMainContainer'>
                       <div className='imageContainer'>
                         {item.image && (
-                        <SanityImage
-                          {...item.image}
-                          alt='Image Art'
-                        />
-                        ) } 
+                          <SanityImage {...item.image} alt='Image Art' />
+                        )}
                       </div>
                       <div className='textContanier'>
                         <PortableText value={item._rawRichTextBody} />
