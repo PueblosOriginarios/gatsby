@@ -4,8 +4,6 @@ import { PortableText } from "@portabletext/react";
 import "./Pdf.scss";
 
 const Pdf = ({ data }) => {
-  console.log(data);
-  console.log(data?.title);
   return (
     <div className='Pdf'>
       {data?.image !== null && data?.image !== undefined && (

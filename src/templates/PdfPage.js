@@ -7,7 +7,6 @@ import "./PdfPage.scss";
 
 const PdfPage = ({ data }) => {
   const pageInfo = data?.allSanityPdf?.nodes[0];
-  console.log(pageInfo);
   return (
     <>
       <Seo
