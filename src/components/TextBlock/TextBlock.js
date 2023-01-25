@@ -11,7 +11,7 @@ const TextBlock = ({
     <div className='textContainer'>
       <div className='empty-left'></div>
       <div className='contentText'>
-        <h5 className='headline-small my-4'>{subTitle}</h5>
+        <h5 className='headline-small my-4 mt-md-0'>{subTitle}</h5>
         <PortableText value={_rawRichText} />
 
         {!isExpanded && _rawRichTextOculto && (
