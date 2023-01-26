@@ -188,6 +188,27 @@ export const query = graphql`
             url
             titulo
             imageDescription
+            image {
+              asset {
+                _id
+              }
+              crop {
+                _key
+                _type
+                bottom
+                left
+                right
+                top
+              }
+              hotspot {
+                _key
+                _type
+                height
+                width
+                x
+                y
+              }
+            }
           }
           ... on SanityDualAsymmetric {
             imageDescription

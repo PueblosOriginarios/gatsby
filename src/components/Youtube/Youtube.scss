@@ -1,15 +1,22 @@
 @import "../../globalStyles/global.scss";
 @import "../../globalStyles/theme.scss";
 
-.youtubeContainer {
+.mediaContainer {
   display: grid;
   grid-template-columns: 1fr;
   padding: 0 1.5rem;
   margin-bottom: 1.5rem;
 
+  .imageSingle {
+    max-width: 850px;
+    img {
+      width: 100%;
+    }
+  }
+
   h4 {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   .video {
     height: 200px;
@@ -21,7 +28,7 @@
     }
   }
 
-  .imageDescription {
+  .mediaDescription {
     font-size: 0.7rem;
     font-weight: bold;
     text-align: left;
@@ -30,7 +37,7 @@
 }
 
 @media (min-width: 425px) {
-  .videoContainer {
+  .mediaContainer {
     .video {
       height: 220px;
     }
@@ -38,7 +45,7 @@
 }
 
 @media (min-width: $breakpoint-md) {
-  .youtubeContainer {
+  .mediaContainer {
     height: max-content;
     grid-template-columns: 1fr var(--column-width, 700px) 1fr;
 
@@ -46,7 +53,7 @@
       height: 400px;
     }
 
-    .imageDescription {
+    .mediaDescription {
       font-size: 0.8rem;
       padding-top: 0.2rem;
     }

@@ -43,7 +43,8 @@ const CustomSection = ({ sections }) => {
             key={index}
             titulo={section?.titulo}
             videoUrl={section?.url}
-            imageDescription={section?.imageDescription}
+            image={section?.image}
+            mediaDescription={section?.imageDescription}
           />
         ) : null}
 
