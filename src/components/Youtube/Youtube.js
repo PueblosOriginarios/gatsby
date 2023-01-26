@@ -1,7 +1,8 @@
 import React from "react";
+import SanityImage from "gatsby-plugin-sanity-image";
 import "./Youtube.scss";
 
-function Youtube({ titulo, videoUrl, imageDescription }) {
+function Youtube({ titulo, videoUrl, image, mediaDescription }) {
   const url = videoUrl?.replace("watch?v=", "embed/");
   let code = url?.substring(url.lastIndexOf("/") + 1, url.length);
   const codeIndex = code?.indexOf("?");
@@ -11,10 +12,10 @@ function Youtube({ titulo, videoUrl, imageDescription }) {
   }
 
   return (
-    <div className='youtubeContainer mt-5'>
+    <div className='mediaContainer mt-5'>
       <div className='empty-left'></div>
-      <div className='contentVideo'>
-        <h4 className='headline-small'>{titulo}</h4>
+      <div>
+        {titulo && <h4 className='headline-small'>{titulo}</h4>}
 
         {videoUrl !== null && videoUrl !== undefined && (
           <div className='video'>
@@ -37,7 +38,16 @@ function Youtube({ titulo, videoUrl, imageDescription }) {
             )}
           </div>
         )}
-          {imageDescription &&  <div className='imageDescription'>{imageDescription}</div>}
+
+        {image !== null && image !== undefined && (
+          <div className='imageSingle'>
+            <SanityImage {...image} alt={mediaDescription} />
+          </div>
+        )}
+
+        {mediaDescription && (
+          <div className='mediaDescription'>{mediaDescription}</div>
+        )}
       </div>
       <div className='empty-right'></div>
     </div>

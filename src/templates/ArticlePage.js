@@ -185,6 +185,27 @@ export const query = graphql`
             titulo
             url
             imageDescription
+            image {
+              asset {
+                _id
+              }
+              crop {
+                _key
+                _type
+                bottom
+                right
+                left
+                top
+              }
+              hotspot {
+                _key
+                _type
+                height
+                width
+                x
+                y
+              }
+            }
           }
           ... on SanityTextBlock {
             _key
