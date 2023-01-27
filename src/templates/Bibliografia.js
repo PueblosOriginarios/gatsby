@@ -2,7 +2,6 @@ import React from "react";
 import { Page } from "../components/index";
 import { graphql } from "gatsby";
 import { PortableText } from "@portabletext/react";
-import Pdf from "../components/Pdf/Pdf";
 import SanityImage from "gatsby-plugin-sanity-image";
 import "./Bibliografia.scss";
 
@@ -55,8 +54,6 @@ const Bibliografia = ({ data }) => {
                 <div className='textBibliografia'>
                   <div></div>
                   <div>
-                    <h5 className='title'>{item.title}</h5>
-                    <p> Por {item.author}</p>
                     <div className='imageMainContainer'>
                       <div className='imageContainer'>
                         {item.image && (
@@ -64,8 +61,19 @@ const Bibliografia = ({ data }) => {
                         )}
                       </div>
                       <div className='textContanier'>
+                        <h5 className='title headline-small' >{item.title}</h5>
+                        <p> Por {item.author}</p>
                         <PortableText value={item._rawRichTextBody} />
-                        <Pdf data={item?.referenceBibliografia} />
+                        {item?.link && (
+                           <a
+                            className='Button'
+                            href={item?.link}
+                            target='_blank'
+                            rel='noreferrer noopener'
+                          >
+                          <small>Descargar PDF</small>
+                          </a>
+                        )}
                       </div>
                     </div>
                     <div className='line'></div>
@@ -143,10 +151,7 @@ export const query = graphql`
         }
         _rawRichTextBody
         filtroBilbliografia
-        referenceBibliografia {
-          link
-          tipoPdf
-        }
+        link
       }
     }
   }

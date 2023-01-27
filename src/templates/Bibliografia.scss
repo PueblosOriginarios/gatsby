@@ -1,4 +1,5 @@
 @import "../globalStyles/global.scss";
+@import "../globalStyles/theme.scss";
 
 .bibliografia {
   .bibliografiaHeader {
@@ -40,6 +41,11 @@
       padding: 1rem;
     }
 
+    .Button {
+      @include primaryBtn;
+      margin: 1rem;
+    }
+
     .line {
       border-top: 1.5px solid $light-green-2;
       height: 2px;
@@ -54,7 +60,7 @@
 
     .imageContainer img {
       padding-bottom: 1rem;
-      max-width: 300px;
+      max-width: 200px;
     }
   }
 }
