@@ -190,29 +190,30 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  // CREACION DE PAGINAS DE BIBLIOGRAFIA
+  const { data: bibliografiaQueryData } = await graphql(`
+    query Bibliografia {
+      allSanityBibliografia {
+        nodes {
+          tipoBibliografia
+        }
+      }
+    }
+  `);
+  if (bibliografiaQueryData.errors) {
+    reporter.panicOnBuild("Error creando paginas de bibliografia");
+  }
+  bibliografiaQueryData.allSanityBibliografia.nodes.forEach((node) => {
+    const bibliografiaDetail = path.resolve("./src/templates/Bibliografia.js");
+    createPage({
+      path: node.tipoBibliografia + "/bibliografia/",
+      component: bibliografiaDetail,
+      context: { slug: node.tipoBibliografia },
+    });
+  });
 
- // CREACION DE PAGINAS DE BIBLIOGRAFIA
- const { data: bibliografiaQueryData } = await graphql(`
- query Bibliografia {
-   allSanityBibliografia {
-     nodes {
-       tipoBibliografia
-     }
-   }
- }
-`);
-if (bibliografiaQueryData.errors) {
- reporter.panicOnBuild("Error creando paginas de bibliografia");
-}
-bibliografiaQueryData.allSanityBibliografia.nodes.forEach((node) => {
- const bibliografiaDetail = path.resolve("./src/templates/Bibliografia.js");
- createPage({
-   path: node.tipoBibliografia + "/bibliografia/",
-   component: bibliografiaDetail,
-   context: { slug: node.tipoBibliografia },
- });
-});
-
-
-
- };
+  createPage({
+    path: "/404",
+    component: require.resolve("./src/pages/404.js"),
+  });
+};
