@@ -211,9 +211,4 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: node.tipoBibliografia },
     });
   });
-
-  createPage({
-    path: "/404",
-    component: require.resolve("./src/pages/404.js"),
-  });
 };
