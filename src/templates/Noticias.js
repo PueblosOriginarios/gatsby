@@ -1,6 +1,7 @@
 import React from "react";
 import { Page } from "../components/index";
 import { graphql } from "gatsby";
+import { Seo } from "../components/seo";
 import CardsNoticias from "../components/CardsNoticias/CardsNoticias";
 import CardEvento from "../components/CardEventos/CardsEventos";
 import "./Noticias.scss";
@@ -13,6 +14,11 @@ const NoticiasPage = ({ data }) => {
 
   return (
     <>
+     <Seo
+        title='Noticias'
+        description='Página con información de la historia del pueblo originario'
+        keywords='Noticias, Información, Pueblos, Originarios'
+      />
       <Page>
         <section className='articleNoticia'>
           <div className='articleNoticiaHeader'>

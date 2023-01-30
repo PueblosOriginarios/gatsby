@@ -68,8 +68,8 @@ const Materiales = ({ data }) => {
     <>
       <Seo
         title='Materiales'
-        description='Página con información de la historia del pueblo originario'
-        keywords='Historia, Información, Pueblos, Originarios'
+        description='Página con información de los materiales didácticos del pueblo originario'
+        keywords='Materiales, Información, Pueblos, Originarios'
       />
       <Page>
         <section className='MaterialesSection'>

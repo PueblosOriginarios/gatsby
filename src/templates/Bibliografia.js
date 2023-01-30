@@ -1,6 +1,7 @@
 import React from "react";
 import { Page } from "../components/index";
 import { graphql } from "gatsby";
+import { Seo } from "../components/seo";
 import { PortableText } from "@portabletext/react";
 import SanityImage from "gatsby-plugin-sanity-image";
 import "./Bibliografia.scss";
@@ -21,6 +22,11 @@ const Bibliografia = ({ data }) => {
 
   return (
     <>
+     <Seo
+        title='Bibliografia'
+        description='Página con información de la bibliografía del pueblo originario'
+        keywords='Bibliografía, Información, Pueblos, Originarios, Chané, Guaraní'
+      />
       <Page>
         {
           <section className='bibliografia'>
