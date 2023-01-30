@@ -7,7 +7,6 @@ const useHeader = () => {
         nodes {
           menu {
             nameMenu
-            link
             submenu {
               Namesubmenu
               link
@@ -33,10 +32,6 @@ const useHeader = () => {
             asset {
               _id
             }
-          }
-          ctaButton {
-            link
-            nameButton
           }
         }
       }
