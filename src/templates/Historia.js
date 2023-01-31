@@ -94,6 +94,7 @@ export const query = graphql`
               }
               titleDualS
               shortText
+              urlVideo
               button {
                 link
                 nameButton
@@ -122,10 +123,6 @@ export const query = graphql`
                 }
                 label
                 description
-              }
-              youtubeVideo {
-                imageDescription
-                url
               }
               imageDualS {
                 asset {

@@ -17,11 +17,12 @@ const ArticlePage = ({ data }) => {
           <div className='articleHeader'>
             <div className='empty-left'></div>
             <div>
-              <SanityImage
+              {imageHeader && <SanityImage
                 {...imageHeader}
                 alt='Image Art'
                 className='imageHeader'
-              />
+              />}
+              
               <div className='titleContent'>
                 <div></div>
                 <h5 className='title'>{title}</h5>
@@ -96,6 +97,7 @@ export const query = graphql`
               titleDualS
               shortText
               imageSide
+              urlVideo
               backgroundColor {
                 title
                 value
@@ -148,10 +150,6 @@ export const query = graphql`
                   x
                   y
                 }
-              }
-              youtubeVideo {
-                imageDescription
-                url
               }
             }
           }

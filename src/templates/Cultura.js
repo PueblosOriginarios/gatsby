@@ -87,14 +87,10 @@ export const query = graphql`
             _key
             _type
             dualSymmetric {
-              youtubeVideo {
-                imageDescription
-                titulo
-                url
-              }
               titleDualS
               shortText
               imageSide
+              urlVideo
               _rawRichTextDualS
               backgroundColor {
                 title

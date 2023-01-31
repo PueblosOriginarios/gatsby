@@ -8,9 +8,9 @@ const DualSymmetric = ({
   data: {
     titleDualS,
     imageDualS,
-    youtubeVideo,
     iconObject,
     imageSide,
+    urlVideo,
     backgroundColor,
     _rawRichTextDualS,
     shortText,
@@ -19,7 +19,7 @@ const DualSymmetric = ({
 }) => {
   const imageIcon = iconObject?.imageIcon;
   const dataImage = imageDualS?.asset;
-  const videoUrl = youtubeVideo?.url;
+  const videoUrl = urlVideo
 
   const darkColors = ["#0A694D", "#868585", "#1B1C1E"];
 
