@@ -80,6 +80,7 @@ const useHome = () => {
               id
               _type
               imageSide
+              urlVideo
               shortText
               titleDualS
               _rawRichTextDualS
@@ -115,10 +116,6 @@ const useHome = () => {
                     _id
                   }
                 }
-              }
-              youtubeVideo {
-                imageDescription
-                url
               }
               imageDualS {
                 crop {
