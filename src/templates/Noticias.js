@@ -16,7 +16,7 @@ const NoticiasPage = ({ data }) => {
     <>
      <Seo
         title='Noticias'
-        description='Página con información de la historia del pueblo originario'
+        description='Página con información de las noticas del pueblo originario'
         keywords='Noticias, Información, Pueblos, Originarios'
       />
       <Page>

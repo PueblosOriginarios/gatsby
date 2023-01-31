@@ -114,6 +114,7 @@ export const query = graphql`
               titleDualS
               shortText
               imageSide
+              urlVideo
               _rawRichTextDualS
               backgroundColor {
                 title
@@ -122,11 +123,6 @@ export const query = graphql`
               button {
                 nameButton
                 link
-              }
-              youtubeVideo {
-                imageDescription
-                titulo
-                url
               }
               imageDualS {
                 asset {

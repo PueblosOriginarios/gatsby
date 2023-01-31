@@ -9,10 +9,7 @@ const useDualSymmetric = () => {
               _rawRichTextDualS
               shortText
               imageSide
-              youtubeVideo {
-                imageDescription
-                url
-              }
+              urlVideo
               backgroundColor {
                 title
                 value
