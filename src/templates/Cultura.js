@@ -8,7 +8,6 @@ import "./Cultura.scss";
 
 const CulturaPage = ({ data }) => {
   const { title, imageHeader } = data?.allSanityCultura?.nodes[0];
-
   const pageInfo = data?.allSanityCultura?.nodes[0];
 
   return (
@@ -171,7 +170,6 @@ export const query = graphql`
                 y
               }
             }
-            id
           }
           ... on SanityTextBlock {
             _key
