@@ -183,8 +183,6 @@ const useHome = () => {
               }
             }
             ... on SanityCarousel {
-              id
-              _type
               title
               images {
                 crop {
