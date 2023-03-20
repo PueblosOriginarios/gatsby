@@ -7,15 +7,15 @@ import "./CarouselImages.scss";
 const CarouselImages = ({ data: { title, images } }) => {
   const imagesResult = images?.map((image, idx) => (
     <div key={idx}>
-      <SanityImage {...image} alt="Image Art" />
+      <SanityImage {...image} alt='Image Art' />
     </div>
   ));
 
   return (
-    <div className="CarouselContainer">
-      <div className="emptyLeft"></div>
-      <div className="ContentContainer">
-        {title && <h3>{title}</h3>}
+    <div className='CarouselContainer'>
+      <div className='emptyLeft'></div>
+      <div className='ContentContainer'>
+        {title && <small className='headline-small'>{title}</small>}
         <Carousel
           autoPlay={true}
           infiniteLoop={true}
@@ -26,7 +26,7 @@ const CarouselImages = ({ data: { title, images } }) => {
           {imagesResult}
         </Carousel>
       </div>
-      <div className="emptyRight"></div>
+      <div className='emptyRight'></div>
     </div>
   );
 };

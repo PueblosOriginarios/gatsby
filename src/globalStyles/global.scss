@@ -286,6 +286,9 @@ small.label-small {
     line-height: 28px;
   }
 
+  small {
+    font-size: $xxs
+  }
   .containerRight {
     padding-right: 4rem;
     max-width: 760px;
