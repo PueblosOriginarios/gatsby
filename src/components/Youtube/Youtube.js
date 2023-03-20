@@ -15,7 +15,7 @@ function Youtube({ titulo, videoUrl, image, mediaDescription }) {
     <div className='mediaContainer mt-5'>
       <div className='empty-left'></div>
       <div>
-        {titulo && <h4 className='headline-small'>{titulo}</h4>}
+        {titulo && <small className='headline-small'>{titulo}</small>}
 
         {videoUrl !== null && videoUrl !== undefined && (
           <div className='video'>

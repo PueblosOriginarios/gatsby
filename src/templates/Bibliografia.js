@@ -22,7 +22,7 @@ const Bibliografia = ({ data }) => {
 
   return (
     <>
-     <Seo
+      <Seo
         title='Bibliografia'
         description='Página con información de la bibliografía del pueblo originario'
         keywords='Bibliografía, Información, Pueblos, Originarios, Chané, Guaraní'
@@ -67,17 +67,19 @@ const Bibliografia = ({ data }) => {
                         )}
                       </div>
                       <div className='textContanier'>
-                        <h5 className='title headline-small' >{item.title}</h5>
+                        <small className='title label-large'>
+                          {item.title}
+                        </small>
                         <p> Por {item.author}</p>
                         <PortableText value={item._rawRichTextBody} />
                         {item?.link && (
-                           <a
+                          <a
                             className='Button'
                             href={item?.link}
                             target='_blank'
                             rel='noreferrer noopener'
                           >
-                          <small>Descargar PDF</small>
+                            <small className='label-small'>Descargar PDF</small>
                           </a>
                         )}
                       </div>
